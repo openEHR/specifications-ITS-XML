@@ -157,6 +157,21 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="VERSIONED_OBJECT">
+		<xs:annotation>
+			<xs:documentation>Version control abstraction, defining semantics for versioning one complex object.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="uid" type="HIER_OBJECT_ID"/>
+			<xs:element name="owner_id" type="OBJECT_REF"/>
+			<xs:element name="time_created" type="DV_DATE_TIME"/>
+			<xs:element name="versions" type="VERSION" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>An ordered list of VERSIONs</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
     <!-- Directory Package -->
 	<xs:complexType name="FOLDER">
 		<xs:complexContent>
