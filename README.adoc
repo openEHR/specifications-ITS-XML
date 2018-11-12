@@ -6,4 +6,4 @@ This repository holds mainly XML Schema files that are intended to be used by ht
 ### Acknowledgements
 Most of XML Schema files were initially authored by https://www.oceanhealthsystems.com[Ocean Informatics]. 
 Further developments were made thanks to contributions of openEHR members 
-and https://www.cabolabs.com/en[CaboLabs], https://www.dips.com/no?lang=eng[DIPS] and https://www.code24.nl[Code24].
+and https://www.cabolabs.com/en[CaboLabs], https://www.code24.nl[Code24], https://www.dips.com/no?lang=eng[DIPS] and https://www.marand.com/[Marand].
