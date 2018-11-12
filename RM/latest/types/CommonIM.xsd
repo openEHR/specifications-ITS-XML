@@ -172,7 +172,19 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+    <xs:complexType name="CONTRIBUTION">
+        <xs:sequence>
+            <xs:element name="uid" type="HIER_OBJECT_ID"/>
+            <xs:element name="versions" type="OBJECT_REF" maxOccurs="unbounded"/>
+            <xs:element name="audit" type="AUDIT_DETAILS"/>
+        </xs:sequence>
+    </xs:complexType>
     <!-- Directory Package -->
+	<xs:complexType name="VERSIONED_FOLDER">
+		<xs:complexContent>
+			<xs:extension base="VERSIONED_OBJECT"/>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:complexType name="FOLDER">
 		<xs:complexContent>
 			<xs:extension base="LOCATABLE">

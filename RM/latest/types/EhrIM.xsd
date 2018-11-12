@@ -3,6 +3,54 @@
 	targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified" version="v1.0.2"
 	id="EhrIM.xsd">
 	<xs:include schemaLocation="DataStructuresIM.xsd"/>
+	<xs:complexType name="EHR">
+		<xs:sequence>
+			<xs:element name="system_id" type="HIER_OBJECT_ID"/>
+			<xs:element name="ehr_id" type="HIER_OBJECT_ID"/>
+			<xs:element name="time_created" type="DV_DATE_TIME"/>
+			<xs:element name="contributions" type="OBJECT_REF" maxOccurs="unbounded"/>
+			<xs:element name="ehr_access" type="OBJECT_REF"/>
+			<xs:element name="ehr_status" type="OBJECT_REF"/>
+			<xs:element name="directory" type="OBJECT_REF" minOccurs="0"/>
+			<xs:element name="compositions" type="OBJECT_REF" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VERSIONED_EHR_ACCESS">
+		<xs:complexContent>
+			<xs:extension base="VERSIONED_OBJECT"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="EHR_ACCESS">
+		<xs:complexContent>
+			<xs:extension base="LOCATABLE">
+				<xs:sequence>
+					<xs:element name="settings" type="ACCESS_CONTROL_SETTINGS" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="VERSIONED_EHR_STATUS">
+		<xs:complexContent>
+			<xs:extension base="VERSIONED_OBJECT"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="EHR_STATUS">
+		<xs:complexContent>
+			<xs:extension base="LOCATABLE">
+				<xs:sequence>
+					<xs:element name="subject" type="PARTY_SELF"/>
+					<xs:element name="is_queryable" type="xs:boolean"/>
+					<xs:element name="is_modifiable" type="xs:boolean"/>
+					<xs:element name="other_details" type="ITEM_STRUCTURE" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="VERSIONED_COMPOSITION">
+		<xs:complexContent>
+			<xs:extension base="VERSIONED_OBJECT"/>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:complexType name="CONTENT_ITEM" abstract="true">
 		<xs:complexContent>
 			<xs:extension base="LOCATABLE"/>
