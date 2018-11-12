@@ -2,6 +2,6 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.openehr.org/v1"
 	targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified" version="v1.0.2"
 	id="Version.xsd">
-	<xs:include schemaLocation="types/Version.xsd"/>
+	<xs:include schemaLocation="types/EhrIM.xsd"/>
 	<xs:element name="version" type="VERSION"/>
 </xs:schema>

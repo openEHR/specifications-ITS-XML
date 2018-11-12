@@ -2,7 +2,7 @@
 <xs:schema version="v1.0.2" targetNamespace="http://schemas.openehr.org/v1"
 	elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns="http://schemas.openehr.org/v1" id="Structure.xsd">
-	<xs:include schemaLocation="types/Structure.xsd"/>
+	<xs:include schemaLocation="types/DataStructuresIM.xsd"/>
 
 	<xs:element name="items" type="LOCATABLE"/>
 </xs:schema>
