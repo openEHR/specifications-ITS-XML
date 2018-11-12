@@ -3,6 +3,53 @@
 	targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified" version="v1.0.2"
 	id="CommonIM.xsd">
 	<xs:include schemaLocation="DataTypesIM.xsd"/>
+    <!-- Archetyped Package -->
+    <xs:complexType name="LOCATABLE" abstract="true">
+        <xs:sequence>
+            <xs:element name="name" type="DV_TEXT"/>
+            <xs:element name="uid" type="UID_BASED_ID" minOccurs="0"/>
+            <xs:element name="links" type="LINK" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="archetype_details" type="ARCHETYPED" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="feeder_audit" type="FEEDER_AUDIT" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="archetype_node_id" type="archetypeNodeId" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="ARCHETYPED">
+        <xs:sequence>
+            <xs:element name="archetype_id" type="ARCHETYPE_ID"/>
+            <xs:element name="template_id" type="TEMPLATE_ID" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="rm_version" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="LINK">
+        <xs:sequence>
+            <xs:element name="meaning" type="DV_TEXT"/>
+            <xs:element name="type" type="DV_TEXT"/>
+            <xs:element name="target" type="DV_EHR_URI"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FEEDER_AUDIT">
+        <xs:sequence>
+            <xs:element name="originating_system_item_ids" type="DV_IDENTIFIER" minOccurs="0"
+                        maxOccurs="unbounded"/>
+            <xs:element name="feeder_system_item_ids" type="DV_IDENTIFIER" minOccurs="0"
+                        maxOccurs="unbounded"/>
+            <xs:element name="original_content" type="DV_ENCAPSULATED" minOccurs="0"/>
+            <xs:element name="originating_system_audit" type="FEEDER_AUDIT_DETAILS"/>
+            <xs:element name="feeder_system_audit" type="FEEDER_AUDIT_DETAILS" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FEEDER_AUDIT_DETAILS">
+        <xs:sequence>
+            <xs:element name="system_id" type="xs:string"/>
+            <xs:element name="location" type="PARTY_IDENTIFIED" minOccurs="0"/>
+            <xs:element name="provider" type="PARTY_IDENTIFIED" minOccurs="0"/>
+            <xs:element name="subject" type="PARTY_PROXY" minOccurs="0"/>
+            <xs:element name="time" type="DV_DATE_TIME" minOccurs="0"/>
+            <xs:element name="version_id" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- Generic Package -->
 	<xs:complexType name="REVISION_HISTORY_ITEM">
 		<xs:sequence>
 			<xs:element name="version_id" type="OBJECT_VERSION_ID"/>
@@ -77,28 +124,8 @@
 			<xs:element name="mode" type="DV_CODED_TEXT"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="FEEDER_AUDIT">
-		<xs:sequence>
-			<xs:element name="originating_system_item_ids" type="DV_IDENTIFIER" minOccurs="0"
-						maxOccurs="unbounded"/>
-			<xs:element name="feeder_system_item_ids" type="DV_IDENTIFIER" minOccurs="0"
-						maxOccurs="unbounded"/>
-			<xs:element name="original_content" type="DV_ENCAPSULATED" minOccurs="0"/>
-			<xs:element name="originating_system_audit" type="FEEDER_AUDIT_DETAILS"/>
-			<xs:element name="feeder_system_audit" type="FEEDER_AUDIT_DETAILS" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="FEEDER_AUDIT_DETAILS">
-		<xs:sequence>
-			<xs:element name="system_id" type="xs:string"/>
-			<xs:element name="location" type="PARTY_IDENTIFIED" minOccurs="0"/>
-			<xs:element name="provider" type="PARTY_IDENTIFIED" minOccurs="0"/>
-			<xs:element name="subject" type="PARTY_PROXY" minOccurs="0"/>
-			<xs:element name="time" type="DV_DATE_TIME" minOccurs="0"/>
-			<xs:element name="version_id" type="xs:string" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="VERSION" abstract="true">
+	<!-- Change Control Package -->
+    <xs:complexType name="VERSION" abstract="true">
 		<xs:sequence>
 			<xs:element name="contribution" type="OBJECT_REF"/>
 			<xs:element name="commit_audit" type="AUDIT_DETAILS"/>
@@ -130,30 +157,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="LOCATABLE" abstract="true">
-		<xs:sequence>
-			<xs:element name="name" type="DV_TEXT"/>
-			<xs:element name="uid" type="UID_BASED_ID" minOccurs="0"/>
-			<xs:element name="links" type="LINK" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="archetype_details" type="ARCHETYPED" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="feeder_audit" type="FEEDER_AUDIT" minOccurs="0"/>
-		</xs:sequence>
-		<xs:attribute name="archetype_node_id" type="archetypeNodeId" use="required"/>
-	</xs:complexType>
-	<xs:complexType name="ARCHETYPED">
-		<xs:sequence>
-			<xs:element name="archetype_id" type="ARCHETYPE_ID"/>
-			<xs:element name="template_id" type="TEMPLATE_ID" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="rm_version" type="xs:string"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="LINK">
-		<xs:sequence>
-			<xs:element name="meaning" type="DV_TEXT"/>
-			<xs:element name="type" type="DV_TEXT"/>
-			<xs:element name="target" type="DV_EHR_URI"/>
-		</xs:sequence>
-	</xs:complexType>
+    <!-- Directory Package -->
 	<xs:complexType name="FOLDER">
 		<xs:complexContent>
 			<xs:extension base="LOCATABLE">
