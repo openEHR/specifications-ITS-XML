@@ -165,7 +165,7 @@
 			<xs:element name="uid" type="HIER_OBJECT_ID"/>
 			<xs:element name="owner_id" type="OBJECT_REF"/>
 			<xs:element name="time_created" type="DV_DATE_TIME"/>
-			<xs:element name="versions" type="VERSION" minOccurs="0">
+			<xs:element name="versions" type="VERSION" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>An ordered list of VERSIONs</xs:documentation>
 				</xs:annotation>
