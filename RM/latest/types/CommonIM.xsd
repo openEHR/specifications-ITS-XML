@@ -2,7 +2,102 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.openehr.org/v1"
 	targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified" version="v1.0.2"
 	id="CommonIM.xsd">
-	<xs:include schemaLocation="BaseTypes.xsd"/>
+	<xs:include schemaLocation="DataTypesIM.xsd"/>
+	<xs:complexType name="REVISION_HISTORY_ITEM">
+		<xs:sequence>
+			<xs:element name="version_id" type="OBJECT_VERSION_ID"/>
+			<xs:element name="audits" type="AUDIT_DETAILS" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="REVISION_HISTORY">
+		<xs:sequence>
+			<xs:element name="items" type="REVISION_HISTORY_ITEM" minOccurs="0"
+						maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AUDIT_DETAILS">
+		<xs:sequence>
+			<xs:element name="system_id" type="xs:string"/>
+			<xs:element name="committer" type="PARTY_PROXY"/>
+			<xs:element name="time_committed" type="DV_DATE_TIME"/>
+			<xs:element name="change_type" type="DV_CODED_TEXT"/>
+			<xs:element name="description" type="DV_TEXT" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ATTESTATION">
+		<xs:complexContent>
+			<xs:extension base="AUDIT_DETAILS">
+				<xs:sequence>
+					<xs:element name="attested_view" type="DV_MULTIMEDIA" minOccurs="0"/>
+					<xs:element name="proof" type="xs:string" minOccurs="0"/>
+					<xs:element name="items" type="DV_EHR_URI" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="reason" type="DV_TEXT"/>
+					<xs:element name="is_pending" type="xs:boolean" default="false"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PARTY_PROXY" abstract="true">
+		<xs:sequence>
+			<xs:element name="external_ref" type="PARTY_REF" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PARTY_IDENTIFIED">
+		<xs:complexContent>
+			<xs:extension base="PARTY_PROXY">
+				<xs:sequence>
+					<xs:element name="name" type="xs:string" minOccurs="0"/>
+					<xs:element name="identifiers" type="DV_IDENTIFIER" minOccurs="0"
+								maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PARTY_RELATED">
+		<xs:complexContent>
+			<xs:extension base="PARTY_IDENTIFIED">
+				<xs:sequence>
+					<xs:element name="relationship" type="DV_CODED_TEXT"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PARTY_SELF">
+		<xs:complexContent>
+			<xs:extension base="PARTY_PROXY">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PARTICIPATION">
+		<xs:sequence>
+			<xs:element name="function" type="DV_TEXT"/>
+			<xs:element name="performer" type="PARTY_PROXY"/>
+			<xs:element name="time" type="DV_INTERVAL" minOccurs="0"/>
+			<xs:element name="mode" type="DV_CODED_TEXT"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FEEDER_AUDIT">
+		<xs:sequence>
+			<xs:element name="originating_system_item_ids" type="DV_IDENTIFIER" minOccurs="0"
+						maxOccurs="unbounded"/>
+			<xs:element name="feeder_system_item_ids" type="DV_IDENTIFIER" minOccurs="0"
+						maxOccurs="unbounded"/>
+			<xs:element name="original_content" type="DV_ENCAPSULATED" minOccurs="0"/>
+			<xs:element name="originating_system_audit" type="FEEDER_AUDIT_DETAILS"/>
+			<xs:element name="feeder_system_audit" type="FEEDER_AUDIT_DETAILS" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FEEDER_AUDIT_DETAILS">
+		<xs:sequence>
+			<xs:element name="system_id" type="xs:string"/>
+			<xs:element name="location" type="PARTY_IDENTIFIED" minOccurs="0"/>
+			<xs:element name="provider" type="PARTY_IDENTIFIED" minOccurs="0"/>
+			<xs:element name="subject" type="PARTY_PROXY" minOccurs="0"/>
+			<xs:element name="time" type="DV_DATE_TIME" minOccurs="0"/>
+			<xs:element name="version_id" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:complexType name="VERSION" abstract="true">
 		<xs:sequence>
 			<xs:element name="contribution" type="OBJECT_REF"/>
