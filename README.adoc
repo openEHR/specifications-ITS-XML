@@ -1,9 +1,7 @@
 # specifications-ITS-XML
-
-### XML Implementation Technology Specifications
-This repository holds mainly XML Schema files that are intended to be used by https://www.openehr.org/programs/specification/workingbaseline[openEHR components].
+XML schema for use with openEHR systems and tools. See https://www.openehr.org/programs/specification/workingbaseline[working baseline] of current specifications.
 
 ### Acknowledgements
 Most of XML Schema files were initially authored by https://www.oceanhealthsystems.com[Ocean Informatics]. 
-Further developments were made thanks to contributions of openEHR members 
+Further developments were made thanks to contributions of several openEHR members 
 and https://www.cabolabs.com/en[CaboLabs], https://www.code24.nl[Code24], https://www.dips.com/no?lang=eng[DIPS] and https://www.marand.com/[Marand].
