@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns="http://schemas.openehr.org/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified" version="v1.0.2" id="EhrExtractIM.xsd">
-	<xs:include schemaLocation="DataStructuresIM.xsd"/>
+	<xs:include schemaLocation="DataStructures.xsd"/>
   <xs:complexType name="X_VERSIONED_OBJECT">
 		<xs:sequence>
 			<xs:element name="uid" type="HIER_OBJECT_ID"/>

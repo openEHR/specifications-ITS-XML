@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.openehr.org/v1"
 	targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified" version="v1.0.2"
 	id="CommonIM.xsd">
-	<xs:include schemaLocation="DataTypesIM.xsd"/>
+	<xs:include schemaLocation="DataTypes.xsd"/>
     <!-- Archetyped Package -->
     <xs:complexType name="LOCATABLE" abstract="true">
         <xs:sequence>

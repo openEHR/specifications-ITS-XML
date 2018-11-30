@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.openehr.org/v1"
 	targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified" version="v1.0.2"
 	id="EhrIM.xsd">
-	<xs:include schemaLocation="DataStructuresIM.xsd"/>
+	<xs:include schemaLocation="DataStructures.xsd"/>
 	<xs:complexType name="EHR">
 		<xs:sequence>
 			<xs:element name="system_id" type="HIER_OBJECT_ID"/>

@@ -2,7 +2,7 @@
 <xs:schema version="v1.0.2" targetNamespace="http://schemas.openehr.org/v1"
 	elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns="http://schemas.openehr.org/v1" id="DataStructuresIM.xsd">
-	<xs:include schemaLocation="CommonIM.xsd"/>
+	<xs:include schemaLocation="Common.xsd"/>
 
 	<xs:complexType name="HISTORY">
 		<xs:complexContent>
