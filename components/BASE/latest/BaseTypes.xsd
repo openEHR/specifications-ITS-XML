@@ -158,6 +158,13 @@
 		</xs:complexContent>
 	</xs:complexType>
 
+	<xs:complexType name="MultiplicityInterval">
+		<xs:complexContent>
+			<xs:extension base="IntervalOfInteger">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
 	<xs:complexType name="IntervalOfReal">
 		<xs:complexContent>
 			<xs:extension base="Interval">

@@ -6,7 +6,6 @@
 	id="Archetype.xsd" vc:minVersion="1.1" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning">
 
 	<xs:include schemaLocation="Rules.xsd"/>
-	<xs:include schemaLocation="Resource.xsd"/>
 	<xs:include schemaLocation="ArchetypeCommon.xsd"/>
 
 	<!-- Entry point -->

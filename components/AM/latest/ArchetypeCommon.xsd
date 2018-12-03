@@ -6,22 +6,9 @@
 	id="ArchetypeCommon.xsd"
     xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
 
-	<xs:include schemaLocation="BaseTypes.xsd"/>
-	
-	<xs:simpleType name="archetypeNodeId">
-		<xs:restriction base="xs:string">
-			<xs:pattern
-				value="([a-zA-Z][\w_]*-[\w][\w_]*-[\w][\w_]*\.[\w][\w_]*(-[\w][\w_]*)*\.v\d+(\.\d)*)|(at(0\.[0-9]{1,4}|[0-9]{4})(\.[0-9]{1,3})*)"
-			/>
-		</xs:restriction>
-	</xs:simpleType>
-	
-	<xs:simpleType name="atCode">
-		<xs:restriction base="xs:string">
-			<xs:pattern value="at(0\.[0-9]{1,4}|[0-9]{4})(\.[0-9]{1,3})*"/>
-		</xs:restriction>
-	</xs:simpleType>
-	
+	<xs:include schemaLocation="../../BASE/latest/BaseTypes.xsd"/>
+	<xs:include schemaLocation="../../BASE/latest/Resource.xsd"/>
+
 	<xs:complexType name="ARCHETYPE_TERM">
 		<xs:sequence>
 			<xs:element name="text" type="xs:string"/>

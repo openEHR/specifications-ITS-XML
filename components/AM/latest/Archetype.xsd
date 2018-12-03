@@ -5,7 +5,6 @@
 	targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified" version="2.0.5"
 	id="Archetype.xsd"
     xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
-	<xs:include schemaLocation="Resource.xsd"/>
 	<xs:include schemaLocation="Rules.xsd"/>
 	<xs:include schemaLocation="ArchetypeCommon.xsd"/>
 	
@@ -49,10 +48,11 @@
 			<xs:extension base="AUTHORED_RESOURCE">
 				<xs:sequence>
 					<xs:group ref="ARCHETYPE"/>
-					<xs:element name="build_uid" type="Uid" minOccurs="0"/>
+					<xs:element name="build_uid" type="UUID"/>
 					<xs:element name="adl_version" type="xs:string" minOccurs="0"/>
-					<xs:element name="is_generated" type="xs:boolean" minOccurs="0"/>
-					<xs:element name="other_metadata" type="StringDictionaryItem" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="rm_release" type="xs:string"/>
+					<xs:element name="is_generated" type="xs:boolean"/>
+					<xs:element name="other_metadata" type="StringDictionaryItem" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
