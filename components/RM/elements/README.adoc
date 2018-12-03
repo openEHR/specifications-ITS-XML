@@ -2,5 +2,8 @@
 
 openEHR https://www.openehr.org/releases/RM/latest/docs/index[RM] data (elements) XML schema - part of openEHR Release-1.0.2.
 
+These are schemas to validate ITEMs, SECTION, ENTRY, COMPOSITION, VERSION data elements.
+
+### Acknowledgements
 Authored by https://www.oceanhealthsystems.com[Ocean Informatics] - 2008.12.22
 Revised by https://www.openehr.org[openEHR Foundation] - 2018.12.01
