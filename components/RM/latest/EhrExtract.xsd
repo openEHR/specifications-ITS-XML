@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns="http://schemas.openehr.org/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified" version="v1.0.2" id="EhrExtractIM.xsd">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   xmlns="http://schemas.openehr.org/v1" targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified"
+		   id="EhrExtract.xsd" version="v1.0.2">
+	<!-- dependencies -->
 	<xs:include schemaLocation="DataStructures.xsd"/>
   <xs:complexType name="X_VERSIONED_OBJECT">
 		<xs:sequence>

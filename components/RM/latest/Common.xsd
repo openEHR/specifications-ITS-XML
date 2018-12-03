@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.openehr.org/v1"
-	targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified" version="v1.0.2"
-	id="CommonIM.xsd">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://schemas.openehr.org/v1" targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified"
+           id="Common.xsd" version="v1.0.2">
+	<!-- dependencies -->
 	<xs:include schemaLocation="DataTypes.xsd"/>
     <!-- Archetyped Package -->
     <xs:complexType name="LOCATABLE" abstract="true">
