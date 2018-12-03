@@ -10,16 +10,18 @@ The repository is structured as follows:
     /AM                  # schemas for AM component
         /Release-1.4     # schemas for Release-1.4 of AM
         /latest          # schemas for working version of AM
+    /BASE                # schemas for BASE component
+        /latest          # schemas for working version of BASE
     /OET                 # schemas for OET component
         /latest          # schemas for working version of OET
+    /QUERY               # schemas for QUERY component
+        /latest          # schemas for working version of QUERY
     /RM                  # schemas for RM component
         /Release-1.0.2   # schemas for Release-1.0.2 of RM
         /latest          # schemas for working version of RM
-    /QUERY               # schemas for QUERY component
-        /latest          # schemas for working version of QUERY
 ----
 
 ### Acknowledgements
 Most of XML Schema files were initially authored by https://www.oceanhealthsystems.com[Ocean Informatics]. 
-Further developments were made thanks to contributions of several openEHR members 
-and https://www.cabolabs.com/en[CaboLabs], https://www.code24.nl[Code24], https://www.dips.com/no?lang=eng[DIPS] and https://www.marand.com/[Marand].
+Further developments were made thanks to contributions of several openEHR members, 
+https://www.cabolabs.com/en[CaboLabs], https://www.code24.nl[Code24], https://www.dips.com/no?lang=eng[DIPS] and https://www.marand.com/[Marand].
