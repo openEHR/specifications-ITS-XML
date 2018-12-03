@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- openEHR Release 1.0.2 Archetype  XML schema -->
 <!-- Authored by Ocean Informatics 2008.12.22  -->
-<xs:schema xmlns="http://schemas.openehr.org/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified" version="1.0.2"
-	id="Archetype.xsd">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://schemas.openehr.org/v1" targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified"
+           id="Archetype.xsd" version="v1.4">
+    <!-- dependencies -->
 	<xs:include schemaLocation="Resource.xsd"/>
+
 	<xs:element name="archetype" type="ARCHETYPE"/>
+
 	<xs:complexType name="ARCHETYPE">
 		<xs:complexContent>
 			<xs:extension base="AUTHORED_RESOURCE">

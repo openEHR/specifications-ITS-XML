@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- openEHR Release 1.0.2 OpenehrProfile XML schema -->
 <!-- Authored by Ocean Informatics 2008.12.22  -->
-<xs:schema xmlns="http://schemas.openehr.org/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified" version="1.0.2"
-	id="OpenehrProfile.xsd">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://schemas.openehr.org/v1" targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified"
+           id="OpenehrProfile.xsd" version="v1.4">
+    <!-- dependencies -->
 	<xs:include schemaLocation="Archetype.xsd"/>
+
 	<xs:complexType name="C_CODE_PHRASE">
 		<xs:complexContent>
 			<xs:extension base="C_DOMAIN_TYPE">
