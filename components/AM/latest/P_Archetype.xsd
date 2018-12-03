@@ -1,10 +1,9 @@
 <?xml version="1.1" encoding="utf-8"?>
-<!-- openEHR Archetype 2.0.6 XML schema - uses P_AOM types - much more space efficient -->
-<!-- Authored by openEHR Foundation 2014.03.22  -->
-<xs:schema xmlns="http://schemas.openehr.org/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified" version="1.0.2"
-	id="Archetype.xsd" vc:minVersion="1.1" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning">
-
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   xmlns="http://schemas.openehr.org/v1" targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified"
+		   id="P_Archetype.xsd" version="v2.0.6"
+		   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+	<!-- dependencies -->
 	<xs:include schemaLocation="Rules.xsd"/>
 	<xs:include schemaLocation="ArchetypeCommon.xsd"/>
 

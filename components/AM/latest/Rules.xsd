@@ -1,10 +1,9 @@
 <?xml version="1.1" encoding="utf-8"?>
-<!-- openEHR Archetype Common elements 2.0.6 XML schema -->
-<!-- Authored by openEHR Foundation 2015.03.22  -->
-<xs:schema xmlns="http://schemas.openehr.org/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified" version="2.0.5"
-	id="Rules.xsd"
-    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   xmlns="http://schemas.openehr.org/v1" targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified"
+		   id="Rules.xsd" version="v2.0.6"
+		   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+	<!-- dependencies -->
 	
 	<xs:complexType name="RULE_ELEMENT" abstract="true">
 		<xs:attribute name="type" type="xs:string"/>
