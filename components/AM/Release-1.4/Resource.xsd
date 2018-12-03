@@ -5,8 +5,7 @@
 		   xmlns="http://schemas.openehr.org/v1" targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified"
 		   id="Resources.xsd" version="v1.4">
 	<!-- dependencies -->
-	<xs:include schemaLocation="../../BASE/latest/BaseTypes.xsd"/>
-	<xs:include schemaLocation="../../RM/latest/Common.xsd"/>
+	<xs:include schemaLocation="../../RM/Release-1.0.2/BaseTypes.xsd"/>
 
 	<xs:complexType name="AUTHORED_RESOURCE" abstract="true">
 		<xs:sequence>
