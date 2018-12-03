@@ -5,12 +5,7 @@
 	targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified" version="v1.0.2"
 	id="BaseTypes.xsd"
     xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
-	<xs:complexType name="TERMINOLOGY_CODE">
-		<xs:sequence>
-			<xs:element name="terminology_id" type="xs:string"/>
-			<xs:element name="code_string" type="xs:string"/>
-		</xs:sequence>
-	</xs:complexType>
+
 
 	<xs:simpleType name="Iso8601DateTime">
 		<xs:restriction base="xs:string">

@@ -208,4 +208,12 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+
+	<xs:complexType name="TERMINOLOGY_CODE">
+		<xs:sequence>
+			<xs:element name="terminology_id" type="xs:string"/>
+			<xs:element name="code_string" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
 </xs:schema>
