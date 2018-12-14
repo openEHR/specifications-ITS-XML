@@ -84,7 +84,7 @@
 					<xs:element name="subject" type="PARTY_PROXY"/>
 					<xs:element name="provider" type="PARTY_PROXY" minOccurs="0"/>
 					<xs:element name="other_participations" type="PARTICIPATION" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="work_flow_id" type="OBJECT_REF" minOccurs="0"/>
+					<xs:element name="workflow_id" type="OBJECT_REF" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
