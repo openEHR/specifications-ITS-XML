@@ -74,7 +74,7 @@
 		<xs:complexContent>
 			<xs:extension base="DV_ORDERED">
 				<xs:sequence>
-					<xs:element name="magnitude_status" type="xs:string" minOccurs="0"/>
+					<xs:element name="magnitude_status" type="magnitudeStatus" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>

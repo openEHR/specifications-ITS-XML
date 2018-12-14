@@ -36,6 +36,16 @@
 			<xs:pattern value="="/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="magnitudeStatus">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="="/>
+			<xs:pattern value="&lt;"/>
+			<xs:pattern value="&lt;="/>
+			<xs:pattern value="&gt;"/>
+			<xs:pattern value="&gt;="/>
+			<xs:pattern value="~"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="archetypeNodeId">
 		<xs:restriction base="xs:string">
 			<!-- an alternative that considers also ARCHETYPE_HRID namespaces and also id-codes
