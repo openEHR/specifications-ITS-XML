@@ -1,9 +1,11 @@
-# specifications-ITS-XML
+= specifications-ITS-XML
 
 XML schema for use with openEHR systems and tools. See https://www.openehr.org/programs/specification/workingbaseline[working baseline] of current specifications.
 
-### Releases and IM Versions
+== Releases and IM Versions
+
 The repository is structured as follows:
+
 ----
 /examples                # XML examples
 /components
@@ -21,7 +23,8 @@ The repository is structured as follows:
         /latest          # schemas for working version of RM
 ----
 
-### Acknowledgements
+== Acknowledgements
+
 Most of XML Schema files were initially authored by https://www.oceanhealthsystems.com[Ocean Informatics]. 
 Further developments were made thanks to contributions of several openEHR members, 
 https://www.cabolabs.com/en[CaboLabs], https://www.code24.nl[Code24], https://www.dips.com/no?lang=eng[DIPS] and https://www.marand.com/[Marand].
