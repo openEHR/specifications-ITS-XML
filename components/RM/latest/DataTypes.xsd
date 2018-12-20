@@ -20,10 +20,10 @@
 		<xs:complexContent>
 			<xs:extension base="DATA_VALUE">
 				<xs:sequence>
-					<xs:element name="issuer" type="xs:string"/>
-					<xs:element name="assigner" type="xs:string"/>
-					<xs:element name="id" type="xs:string"/>
-					<xs:element name="type" type="xs:string"/>
+					<xs:element name="issuer" type="NonEmptyString"/>
+					<xs:element name="assigner" type="NonEmptyString"/>
+					<xs:element name="id" type="NonEmptyString"/>
+					<xs:element name="type" type="NonEmptyString"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -117,7 +117,7 @@
 			<xs:extension base="DV_AMOUNT">
 				<xs:sequence>
 					<xs:element name="magnitude" type="xs:double"/>
-					<xs:element name="units" type="xs:string"/>
+					<xs:element name="units" type="NonEmptyString"/>
 					<xs:element name="precision" type="xs:int" default="-1" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -167,7 +167,7 @@
 		<xs:complexContent>
 			<xs:extension base="DATA_VALUE">
 				<xs:sequence>
-					<xs:element name="value" type="xs:string"/>
+					<xs:element name="value" type="NonEmptyString"/>
 					<xs:element name="hyperlink" type="DV_URI" minOccurs="0"/>
 					<xs:element name="formatting" type="xs:string" minOccurs="0"/>
 					<xs:element name="mappings" type="TERM_MAPPING" minOccurs="0"
@@ -190,7 +190,7 @@
 	<xs:complexType name="CODE_PHRASE">
 		<xs:sequence>
 			<xs:element name="terminology_id" type="TERMINOLOGY_ID"/>
-			<xs:element name="code_string" type="xs:string"/>
+			<xs:element name="code_string" type="NonEmptyString"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="TERM_MAPPING">
@@ -291,7 +291,7 @@
 			<xs:extension base="DV_ENCAPSULATED">
 				<xs:sequence>
 					<xs:element name="value" type="xs:string"/>
-					<xs:element name="formalism" type="xs:string"/>
+					<xs:element name="formalism" type="NonEmptyString"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -300,7 +300,7 @@
 		<xs:complexContent>
 			<xs:extension base="DATA_VALUE">
 				<xs:sequence>
-					<xs:element name="value" type="xs:anyURI" minOccurs="0"/>
+					<xs:element name="value" type="NonEmptyUri" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>

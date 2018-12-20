@@ -47,7 +47,7 @@
     </xs:complexType>
     <xs:complexType name="FEEDER_AUDIT_DETAILS">
         <xs:sequence>
-            <xs:element name="system_id" type="xs:string"/>
+            <xs:element name="system_id" type="NonEmptyString"/>
             <xs:element name="location" type="PARTY_IDENTIFIED" minOccurs="0"/>
             <xs:element name="provider" type="PARTY_IDENTIFIED" minOccurs="0"/>
             <xs:element name="subject" type="PARTY_PROXY" minOccurs="0"/>
@@ -99,7 +99,7 @@
 		<xs:complexContent>
 			<xs:extension base="PARTY_PROXY">
 				<xs:sequence>
-					<xs:element name="name" type="xs:string" minOccurs="0"/>
+					<xs:element name="name" type="NonEmptyString" minOccurs="0"/>
 					<xs:element name="identifiers" type="DV_IDENTIFIER" minOccurs="0"
 								maxOccurs="unbounded"/>
 				</xs:sequence>
