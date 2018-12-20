@@ -5,16 +5,21 @@
 	<!-- dependencies -->
 	<xs:include schemaLocation="DataTypes.xsd"/>
     <!-- Archetyped Package -->
-    <xs:complexType name="LOCATABLE" abstract="true">
-        <xs:sequence>
-            <xs:element name="name" type="DV_TEXT"/>
-            <xs:element name="uid" type="UID_BASED_ID" minOccurs="0"/>
-            <xs:element name="links" type="LINK" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="archetype_details" type="ARCHETYPED" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="feeder_audit" type="FEEDER_AUDIT" minOccurs="0"/>
-        </xs:sequence>
-        <xs:attribute name="archetype_node_id" type="archetypeNodeId" use="required"/>
-    </xs:complexType>
+	<xs:complexType name="PATHABLE" abstract="true"/>
+	<xs:complexType name="LOCATABLE" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="PATHABLE">
+				<xs:sequence>
+					<xs:element name="name" type="DV_TEXT"/>
+					<xs:element name="uid" type="UID_BASED_ID" minOccurs="0"/>
+					<xs:element name="links" type="LINK" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="archetype_details" type="ARCHETYPED" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="feeder_audit" type="FEEDER_AUDIT" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="archetype_node_id" type="archetypeNodeId" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
     <xs:complexType name="ARCHETYPED">
         <xs:sequence>
             <xs:element name="archetype_id" type="ARCHETYPE_ID"/>
