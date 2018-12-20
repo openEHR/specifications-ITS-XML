@@ -105,10 +105,10 @@
 	<xs:complexType name="ELEMENT">
 		<xs:complexContent>
 			<xs:extension base="ITEM">
-				<xs:sequence>
-					<xs:element name="value" type="DATA_VALUE" minOccurs="0"/>
-					<xs:element name="null_flavour" type="DV_CODED_TEXT" minOccurs="0"/>
-				</xs:sequence>
+				<xs:choice>
+					<xs:element name="value" type="DATA_VALUE"/>
+					<xs:element name="null_flavour" type="DV_CODED_TEXT"/>
+				</xs:choice>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
