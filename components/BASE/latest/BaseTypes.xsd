@@ -252,4 +252,12 @@
 		</xs:sequence>
 	</xs:complexType>
 
+	<xs:simpleType name="VALIDITY_KIND">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="mandatory"/>
+			<xs:enumeration value="optional"/>
+			<xs:enumeration value="prohibited"/>
+		</xs:restriction>
+	</xs:simpleType>
+
 </xs:schema>
