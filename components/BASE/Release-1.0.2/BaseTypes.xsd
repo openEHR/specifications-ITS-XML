@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns="http://schemas.openehr.org/v1" targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified"
-           id="BaseTypes.xsd" version="v1.1.0">
+           id="BaseTypes.xsd" version="v1.0.2">
 	<xs:simpleType name="Iso8601DateTime">
 		<xs:restriction base="xs:string">
 			<xs:pattern
@@ -253,10 +253,10 @@
 	</xs:complexType>
 
 	<xs:simpleType name="VALIDITY_KIND">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="mandatory"/>
-			<xs:enumeration value="optional"/>
-			<xs:enumeration value="prohibited"/>
+		<xs:restriction base="xs:integer">
+			<xs:enumeration value="1001" id="mandatory"/>
+			<xs:enumeration value="1002" id="optional"/>
+			<xs:enumeration value="1003" id="disallowed"/>
 		</xs:restriction>
 	</xs:simpleType>
 

@@ -1,0 +1,6 @@
+# BaseTypes Release-1.0.2
+
+openEHR XML schemas for some https://specifications.openehr.org/releases/RM/Release-1.0.2/support.html[BaseTypes compatible with RM Release-1.0.2].
+
+### Acknowledgements
+Authored by https://www.openehr.org[openEHR Foundation] - 2008-2018
