@@ -1,6 +1,6 @@
 = specifications-ITS-XML
 
-XML schema for use with openEHR systems and tools. See https://www.openehr.org/programs/specification/workingbaseline[working baseline] of current specifications.
+XML schema for use with openEHR systems and tools. See https://specifications.openehr.org/[working baseline] of current specifications.
 
 == Releases and IM Versions
 
