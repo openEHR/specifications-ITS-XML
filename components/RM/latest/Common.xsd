@@ -127,7 +127,7 @@
 			<xs:element name="function" type="DV_TEXT"/>
 			<xs:element name="performer" type="PARTY_PROXY"/>
 			<xs:element name="time" type="DV_INTERVAL" minOccurs="0"/>
-			<xs:element name="mode" type="DV_CODED_TEXT"/>
+			<xs:element name="mode" type="DV_CODED_TEXT" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<!-- Change Control Package -->
