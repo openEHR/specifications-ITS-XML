@@ -20,10 +20,10 @@
 		<xs:complexContent>
 			<xs:extension base="DATA_VALUE">
 				<xs:sequence>
-					<xs:element name="issuer" type="NonEmptyString"/>
-					<xs:element name="assigner" type="NonEmptyString"/>
+					<xs:element name="issuer" type="xs:string" minOccurs="0"/>
+					<xs:element name="assigner" type="xs:string" minOccurs="0"/>
 					<xs:element name="id" type="NonEmptyString"/>
-					<xs:element name="type" type="NonEmptyString"/>
+					<xs:element name="type" type="xs:string" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
