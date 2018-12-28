@@ -263,9 +263,6 @@
 		<xs:complexContent>
 			<xs:extension base="DATA_VALUE">
 				<xs:sequence>
-                    <!-- For legacy reasons on DV_MULTIMEDIA instances, this is disabled here, and has only concrete implementation in child types
-                    <xs:element name="size" type="xs:int"/>
-                    -->
 					<xs:element name="charset" type="CODE_PHRASE" minOccurs="0"/>
 					<xs:element name="language" type="CODE_PHRASE" minOccurs="0"/>
 				</xs:sequence>
@@ -295,7 +292,6 @@
 				<xs:sequence>
 					<xs:element name="value" type="xs:string"/>
 					<xs:element name="formalism" type="NonEmptyString"/>
-                    <xs:element name="size" type="xs:int"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
