@@ -4,17 +4,7 @@
 		   id="EhrExtract.xsd" version="v1.0.3">
 	<!-- dependencies -->
 	<xs:include schemaLocation="DataStructures.xsd"/>
-  <xs:complexType name="X_VERSIONED_OBJECT">
-		<xs:sequence>
-			<xs:element name="uid" type="HIER_OBJECT_ID"/>
-			<xs:element name="owner_id" type="OBJECT_REF"/>
-			<xs:element name="time_created" type="DV_DATE_TIME"/>
-			<xs:element name="total_version_count" type="xs:int"/>
-			<xs:element name="extract_version_count" type="xs:int"/>
-			<xs:element name="revision_history" type="REVISION_HISTORY" minOccurs="0"/>
-			<xs:element name="versions" type="ORIGINAL_VERSION" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
-	</xs:complexType>
+	<!-- common package -->
 	<xs:complexType name="EXTRACT">
 		<xs:complexContent>
 			<xs:extension base="LOCATABLE">
@@ -24,7 +14,6 @@
 					<xs:element name="system_id" type="HIER_OBJECT_ID"/>
 					<xs:element name="participations" type="PARTICIPATION" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="sequence_nr" type="xs:long"/>
-					<!--<xs:element name="demographics" type="X_VERSIONED_OBJECT" minOccurs="0" maxOccurs="unbounded"/>-->
 					<xs:element name="chapters" type="EXTRACT_CHAPTER" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="specification" type="EXTRACT_SPEC" minOccurs="0"/>
 				</xs:sequence>
@@ -146,6 +135,19 @@
 			<xs:element name="performer" type="xs:string"/>
 		</xs:sequence>
 	</xs:complexType>
+	<!-- openehr_extract package -->
+	<xs:complexType name="X_VERSIONED_OBJECT">
+		<xs:sequence>
+			<xs:element name="uid" type="HIER_OBJECT_ID"/>
+			<xs:element name="owner_id" type="OBJECT_REF"/>
+			<xs:element name="time_created" type="DV_DATE_TIME"/>
+			<xs:element name="total_version_count" type="xs:int"/>
+			<xs:element name="extract_version_count" type="xs:int"/>
+			<xs:element name="revision_history" type="REVISION_HISTORY" minOccurs="0"/>
+			<xs:element name="versions" type="ORIGINAL_VERSION" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- generic_extract package -->
 	<xs:complexType name="GENERIC_CONTENT_ITEM">
 		<xs:complexContent>
 			<xs:extension base="EXTRACT_CONTENT_ITEM">
@@ -165,4 +167,6 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<!-- sync_extract package -->
+	<!-- message package -->
 </xs:schema>
