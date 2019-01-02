@@ -52,4 +52,4 @@ true meta-data. Making it an attribute allows archetype paths to be easily mappe
 
 ### Acknowledgements
 Authored by https://www.oceanhealthsystems.com[Ocean Informatics] - 2008.12.22
-Revised by https://www.openehr.org[openEHR Foundation] - 2018.12.01
+Revised by https://www.openehr.org[openEHR Foundation] - 2019.01.02
