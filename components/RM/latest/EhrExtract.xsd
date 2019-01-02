@@ -245,7 +245,7 @@
 			<xs:element name="sender" type="xs:string"/>
 			<xs:element name="sender_reference" type="xs:string"/>
 			<xs:element name="addressees" type="xs:string" maxOccurs="unbounded"/>
-			<xs:element name="urgency" type="xs:int"/>
+			<xs:element name="urgency" type="xs:int" minOccurs="0"/>
 			<xs:element name="message" type="MESSAGE"/>
 		</xs:sequence>
 	</xs:complexType>
