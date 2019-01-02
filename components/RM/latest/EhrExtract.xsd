@@ -42,6 +42,15 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="EXTRACT_ENTITY_CHAPTER">
+		<xs:complexContent>
+			<xs:extension base="EXTRACT_CHAPTER">
+				<xs:sequence>
+					<xs:element name="extract_id_key" type="xs:string"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:complexType name="EXTRACT_FOLDER">
 		<xs:complexContent>
 			<xs:extension base="LOCATABLE">
@@ -65,16 +74,13 @@
 			<xs:element name="item" type="X_VERSIONED_OBJECT" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="EXTRACT_ENTITY_IDENTIFIER">
-		<xs:sequence>
-			<xs:element name="entity_id" type="HIER_OBJECT_ID" minOccurs="0"/>
-			<xs:element name="subject" type="PARTY_IDENTIFIED" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="EXTRACT_ENTITY_MANIFEST">
 		<xs:sequence>
+			<xs:element name="extract_id_key" type="xs:string"/>
+			<xs:element name="ehr_id" type="xs:string" minOccurs="0"/>
+			<xs:element name="subject_id" type="xs:string" minOccurs="0"/>
+			<xs:element name="other_ids" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="item_list" type="OBJECT_REF" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="entity_identifier" type="EXTRACT_ENTITY_IDENTIFIER"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="EXTRACT_MANIFEST">
