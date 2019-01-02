@@ -90,7 +90,7 @@
 	</xs:complexType>
 	<xs:complexType name="EXTRACT_SPEC">
 		<xs:sequence>
-			<xs:element name="extract_type" type="xs:string"/>
+			<xs:element name="extract_type" type="DV_CODED_TEXT"/>
 			<xs:element name="includes_multimedia" type="xs:boolean"/>
 			<xs:element name="link_depth" type="xs:int"/>
 			<xs:element name="criteria" type="DV_PARSABLE" minOccurs="0" maxOccurs="unbounded"/>
@@ -119,11 +119,21 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="EXTRACT_ACTION_REQUEST">
+		<xs:complexContent>
+			<xs:extension base="LOCATABLE">
+				<xs:sequence>
+					<xs:element name="request_id" type="OBJECT_REF"/>
+					<xs:element name="action" type="DV_CODED_TEXT"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:complexType name="EXTRACT_UPDATE_SPEC">
 		<xs:sequence>
 			<xs:element name="persist_in_server" type="xs:boolean"/>
 			<xs:element name="repeat_period" type="DV_INTERVAL" minOccurs="0"/>
-			<xs:element name="trigger_events" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="trigger_events" type="DV_CODED_TEXT" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="send_changes_only" type="xs:boolean"/>
 		</xs:sequence>
 	</xs:complexType>
