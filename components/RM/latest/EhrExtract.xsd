@@ -54,7 +54,9 @@
 					<xs:element name="is_primary" type="xs:boolean"/>
 					<xs:element name="is_changed" type="xs:boolean" minOccurs="0"/>
 					<xs:element name="is_masked" type="xs:boolean" minOccurs="0"/>
+					<!-- the following is only defined in the child class with a concrete implementation
 					<xs:element name="item" type="xs:anyType" minOccurs="0"/>
+					-->
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -136,6 +138,15 @@
 		</xs:sequence>
 	</xs:complexType>
 	<!-- openehr_extract package -->
+	<xs:complexType name="OPENEHR_CONTENT_ITEM">
+		<xs:complexContent>
+			<xs:extension base="EXTRACT_CONTENT_ITEM">
+				<xs:sequence>
+					<xs:element name="item" type="X_VERSIONED_OBJECT" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:complexType name="X_VERSIONED_OBJECT">
 		<xs:sequence>
 			<xs:element name="uid" type="HIER_OBJECT_ID"/>
@@ -146,6 +157,31 @@
 			<xs:element name="revision_history" type="REVISION_HISTORY" minOccurs="0"/>
 			<xs:element name="versions" type="ORIGINAL_VERSION" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="X_VERSIONED_EHR_ACCESS">
+		<xs:complexContent>
+			<xs:extension base="X_VERSIONED_OBJECT"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="X_VERSIONED_EHR_STATUS">
+		<xs:complexContent>
+			<xs:extension base="X_VERSIONED_OBJECT"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="X_VERSIONED_COMPOSITION">
+		<xs:complexContent>
+			<xs:extension base="X_VERSIONED_OBJECT"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="X_VERSIONED_FOLDER">
+		<xs:complexContent>
+			<xs:extension base="X_VERSIONED_OBJECT"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="X_VERSIONED_PARTY">
+		<xs:complexContent>
+			<xs:extension base="X_VERSIONED_OBJECT"/>
+		</xs:complexContent>
 	</xs:complexType>
 	<!-- generic_extract package -->
 	<xs:complexType name="GENERIC_CONTENT_ITEM">
@@ -163,10 +199,63 @@
 					<xs:element name="version_set_id" type="xs:string" minOccurs="0"/>
 					<xs:element name="system_id" type="xs:string" minOccurs="0"/>
 					<xs:element name="other_details" type="StringDictionaryItem" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="item" type="LOCATABLE" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- sync_extract package -->
+	<xs:complexType name="SYNC_EXTRACT_REQUEST">
+		<xs:complexContent>
+			<xs:extension base="MESSAGE_CONTENT">
+				<xs:sequence>
+					<xs:element name="specification" type="SYNC_EXTRACT_SPEC"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SYNC_EXTRACT">
+		<xs:complexContent>
+			<xs:extension base="MESSAGE_CONTENT">
+				<xs:sequence>
+					<xs:element name="specification" type="SYNC_EXTRACT_SPEC"/>
+					<xs:element name="items" type="X_CONTRIBUTION" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SYNC_EXTRACT_SPEC">
+		<xs:sequence>
+			<xs:element name="includes_versions" type="xs:boolean"/>
+			<xs:element name="contribution_list" type="HIER_OBJECT_ID" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="contributions_since" type="DV_DATE_TIME" minOccurs="0"/>
+			<xs:element name="all_contributions" type="xs:boolean" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="X_CONTRIBUTION">
+		<xs:sequence>
+			<xs:element name="uid" type="HIER_OBJECT_ID"/>
+			<xs:element name="audit" type="AUDIT_DETAILS"/>
+			<xs:element name="versions" type="VERSION" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
 	<!-- message package -->
+	<xs:complexType name="ADDRESSED_MESSAGE">
+		<xs:sequence>
+			<xs:element name="sender" type="xs:string"/>
+			<xs:element name="sender_reference" type="xs:string"/>
+			<xs:element name="addressees" type="xs:string" maxOccurs="unbounded"/>
+			<xs:element name="urgency" type="xs:int"/>
+			<xs:element name="message" type="MESSAGE"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MESSAGE_CONTENT" abstract="true"/>
+	<xs:complexType name="MESSAGE">
+		<xs:sequence>
+			<xs:element name="author" type="PARTY_PROXY"/>
+			<xs:element name="audit" type="AUDIT_DETAILS"/>
+			<xs:element name="content" type="MESSAGE_CONTENT"/>
+			<xs:element name="signature" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
 </xs:schema>
