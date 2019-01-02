@@ -77,6 +77,13 @@
 			<xs:minLength value="1"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:complexType name="StringDictionaryItem">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="id" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
     <xs:complexType name="UID" abstract="true">
         <xs:sequence>
             <xs:element name="value" type="xs:string"/>

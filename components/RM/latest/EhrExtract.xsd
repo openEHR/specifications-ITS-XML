@@ -138,4 +138,31 @@
 			<xs:element name="update_method" type="CODE_PHRASE"/>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="EXTRACT_PARTICIPATION">
+		<xs:sequence>
+			<xs:element name="time" type="DV_INTERVAL" minOccurs="0"/>
+			<xs:element name="function" type="DV_TEXT"/>
+			<xs:element name="mode" type="DV_CODED_TEXT" minOccurs="0"/>
+			<xs:element name="performer" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GENERIC_CONTENT_ITEM">
+		<xs:complexContent>
+			<xs:extension base="EXTRACT_CONTENT_ITEM">
+				<xs:sequence>
+					<xs:element name="item_type" type="DV_CODED_TEXT" minOccurs="0"/>
+					<xs:element name="item_type_version" type="xs:string" minOccurs="0"/>
+					<xs:element name="author" type="xs:string" minOccurs="0"/>
+					<xs:element name="creation_time" type="Iso8601DateTime" minOccurs="0"/>
+					<xs:element name="authoriser" type="xs:string" minOccurs="0"/>
+					<xs:element name="authorisation_time" type="Iso8601DateTime" minOccurs="0"/>
+					<xs:element name="item_status" type="DV_CODED_TEXT" minOccurs="0"/>
+					<xs:element name="version_id" type="xs:string" minOccurs="0"/>
+					<xs:element name="version_set_id" type="xs:string" minOccurs="0"/>
+					<xs:element name="system_id" type="xs:string" minOccurs="0"/>
+					<xs:element name="other_details" type="StringDictionaryItem" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 </xs:schema>

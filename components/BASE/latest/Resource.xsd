@@ -74,13 +74,6 @@
 		</xs:sequence>
 		<xs:attribute name="id" type="xs:string" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="StringDictionaryItem">
-		<xs:simpleContent>
-			<xs:extension base="xs:string">
-				<xs:attribute name="id" type="xs:string" use="required"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="InternetId">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="\w+(\.\w+)*"/>
