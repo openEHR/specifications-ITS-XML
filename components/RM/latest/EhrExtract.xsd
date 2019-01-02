@@ -19,7 +19,7 @@
 		<xs:complexContent>
 			<xs:extension base="LOCATABLE">
 				<xs:sequence>
-					<xs:element name="request_id" type="OBJECT_REF" minOccurs="0"/>
+					<xs:element name="request_id" type="HIER_OBJECT_ID" minOccurs="0"/>
 					<xs:element name="time_created" type="DV_DATE_TIME"/>
 					<xs:element name="system_id" type="HIER_OBJECT_ID"/>
 					<xs:element name="participations" type="PARTICIPATION" minOccurs="0" maxOccurs="unbounded"/>
@@ -53,10 +53,9 @@
 	</xs:complexType>
 	<xs:complexType name="EXTRACT_FOLDER">
 		<xs:complexContent>
-			<xs:extension base="LOCATABLE">
+			<xs:extension base="EXTRACT_ITEM">
 				<xs:sequence>
-					<xs:element name="items" type="OBJECT_REF" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="folders" type="EXTRACT_FOLDER" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="items" type="EXTRACT_ITEM" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -94,8 +93,6 @@
 			<xs:element name="includes_multimedia" type="xs:boolean"/>
 			<xs:element name="link_depth" type="xs:int"/>
 			<xs:element name="criteria" type="DV_PARSABLE" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="includes_directory" type="xs:boolean"/>
-			<xs:element name="directory_archetype" type="ARCHETYPE_ID" minOccurs="0"/>
 			<xs:element name="other_details" type="ITEM_STRUCTURE" minOccurs="0"/>
 			<xs:element name="version_spec" type="EXTRACT_VERSION_SPEC" minOccurs="0"/>
 			<xs:element name="manifest" type="EXTRACT_MANIFEST"/>
