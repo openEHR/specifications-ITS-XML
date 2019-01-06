@@ -292,6 +292,8 @@
 				<xs:sequence>
 					<xs:element name="value" type="xs:string"/>
 					<xs:element name="formalism" type="NonEmptyString"/>
+					<!-- the following will support legacy data instances by allowing 'size' -->
+					<xs:element name="size" type="xs:int" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
