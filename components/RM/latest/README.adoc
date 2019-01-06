@@ -1,6 +1,6 @@
 # RM Types
 
-openEHR https://specifications.openehr.org/releases/1.0.3[RM] XML schema - openEHR Release-1.0.3.
+openEHR https://specifications.openehr.org/releases/1.0.4[RM] XML schema - openEHR Release-1.0.4.
 
 These are only type schemas, they do not validate directly any XML document or elements.
 
