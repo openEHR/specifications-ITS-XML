@@ -71,7 +71,7 @@
 			</xs:element>
 			<!-- TAG not supported in v1 -->
 			<!--
-			<xs:element name="tagScope" type="TAG_SCOPE" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="tagScope" type="TAG_SCOPE" minOccurs="0"/>
 			-->
 			<!-- PARTITION BY not supported in v1 -->
 			<!--
@@ -86,7 +86,7 @@
 			-->
 			<!-- CORRELATION ID not supported in v1 -->
 			<!--
-			<xs:element name="correlationId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="correlationId" type="xs:string" minOccurs="0"/>
 			-->
 			<xs:element name="aql_parameters" minOccurs="0">
 				<xs:complexType>
@@ -110,7 +110,7 @@
 			<xs:documentation>Class defining the structure of a query response from an openEHR Server</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="meta" type="RESPONSE_METADATA" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="meta" type="RESPONSE_METADATA" minOccurs="0"/>
 			<xs:element name="name" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Name of a query when registered as a stored query</xs:documentation>

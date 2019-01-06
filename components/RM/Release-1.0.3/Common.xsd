@@ -13,7 +13,7 @@
 					<xs:element name="name" type="DV_TEXT"/>
 					<xs:element name="uid" type="UID_BASED_ID" minOccurs="0"/>
 					<xs:element name="links" type="LINK" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="archetype_details" type="ARCHETYPED" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="archetype_details" type="ARCHETYPED" minOccurs="0"/>
 					<xs:element name="feeder_audit" type="FEEDER_AUDIT" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute name="archetype_node_id" type="archetypeNodeId" use="required"/>
@@ -23,7 +23,7 @@
     <xs:complexType name="ARCHETYPED">
         <xs:sequence>
             <xs:element name="archetype_id" type="ARCHETYPE_ID"/>
-            <xs:element name="template_id" type="TEMPLATE_ID" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="template_id" type="TEMPLATE_ID" minOccurs="0"/>
             <xs:element name="rm_version" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
@@ -143,7 +143,7 @@
 			<xs:extension base="VERSION">
 				<xs:sequence>
 					<xs:element name="uid" type="OBJECT_VERSION_ID"/>
-					<xs:element name="data" type="xs:anyType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="data" type="xs:anyType" minOccurs="0"/>
 					<xs:element name="preceding_version_uid" type="OBJECT_VERSION_ID" minOccurs="0"/>
 					<xs:element name="other_input_version_uids" type="OBJECT_VERSION_ID"
 						minOccurs="0" maxOccurs="unbounded"/>
