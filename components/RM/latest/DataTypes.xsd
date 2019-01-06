@@ -169,7 +169,7 @@
 				<xs:sequence>
 					<xs:element name="value" type="NonEmptyString"/>
 					<xs:element name="hyperlink" type="DV_URI" minOccurs="0"/>
-					<xs:element name="formatting" type="xs:string" minOccurs="0"/>
+					<xs:element name="formatting" type="NonEmptyString" minOccurs="0"/>
 					<xs:element name="mappings" type="TERM_MAPPING" minOccurs="0"
 						maxOccurs="unbounded"/>
 					<xs:element name="language" type="CODE_PHRASE" minOccurs="0"/>

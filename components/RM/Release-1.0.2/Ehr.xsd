@@ -157,7 +157,7 @@
 				<xs:sequence>
 					<xs:element name="description" type="ITEM_STRUCTURE"/>
 					<xs:element name="timing" type="DV_PARSABLE"/>
-					<xs:element name="action_archetype_id" type="xs:string"/>					
+					<xs:element name="action_archetype_id" type="NonEmptyString" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -195,7 +195,7 @@
 		<xs:sequence>
 			<xs:element name="start_time" type="DV_DATE_TIME"/>
 			<xs:element name="end_time" type="DV_DATE_TIME" minOccurs="0"/>
-			<xs:element name="location" type="xs:string" minOccurs="0"/>
+			<xs:element name="location" type="NonEmptyString" minOccurs="0"/>
 			<xs:element name="setting" type="DV_CODED_TEXT"/>
 			<xs:element name="other_context" type="ITEM_STRUCTURE" minOccurs="0"/>
 			<xs:element name="health_care_facility" type="PARTY_IDENTIFIED" minOccurs="0"/>

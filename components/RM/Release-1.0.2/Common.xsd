@@ -24,7 +24,7 @@
         <xs:sequence>
             <xs:element name="archetype_id" type="ARCHETYPE_ID"/>
             <xs:element name="template_id" type="TEMPLATE_ID" minOccurs="0"/>
-            <xs:element name="rm_version" type="xs:string"/>
+            <xs:element name="rm_version" type="NonEmptyString"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="LINK">
@@ -70,7 +70,7 @@
 	</xs:complexType>
 	<xs:complexType name="AUDIT_DETAILS">
 		<xs:sequence>
-			<xs:element name="system_id" type="xs:string"/>
+			<xs:element name="system_id" type="NonEmptyString"/>
 			<xs:element name="committer" type="PARTY_PROXY"/>
 			<xs:element name="time_committed" type="DV_DATE_TIME"/>
 			<xs:element name="change_type" type="DV_CODED_TEXT"/>
