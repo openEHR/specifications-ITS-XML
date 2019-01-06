@@ -24,6 +24,7 @@ The repository is structured as follows:
         /latest          # schemas for working version of RM
         /Release-1.0.2   # schemas for Release-1.0.2 of RM
         /Release-1.0.3   # schemas for Release-1.0.3 of RM
+        /Release-1.0.4   # schemas for Release-1.0.4 of RM
 ----
 
 == Acknowledgements
