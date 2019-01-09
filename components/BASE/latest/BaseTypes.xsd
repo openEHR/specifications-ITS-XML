@@ -53,7 +53,7 @@
 			see https://regex101.com/r/IX5KjF/3
 			-->
 			<xs:pattern
-					value="([a-zA-Z]\w+-[a-zA-Z]\w+-[a-zA-Z]\w+\.[a-zA-Z]\w+(?:-\w+)?\.v\d+(?:\.\d+\.\d+)?(?:(?:-rc|-alpha)(?:\.\d+)?)?)|(at\d{1,4}(?:\.\d{1,4})?)"
+					value="([a-zA-Z]\w+-[a-zA-Z]\w+-[a-zA-Z]\w+\.[a-zA-Z]\w+(-\w+)?\.v\d+(\.\d+\.\d+)?((-rc|-alpha)(\.\d+)?)?)|(at\d{1,4}(\.\d{1,4})?)"
 			/>
 		</xs:restriction>
 	</xs:simpleType>
