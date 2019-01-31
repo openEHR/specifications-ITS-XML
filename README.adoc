@@ -4,6 +4,10 @@ XML schema for use with openEHR systems and tools. See https://specifications.op
 
 == Releases and IM Versions
 
+In order to signal and avoid breaking changes introduced by a number of JIRA issues and the restructure of this repository, 
+the upcoming release for this repository is going to be tagged as **Release-2.0.0**.
+Simultaneously, the internal namespace used in the schemas is also changed to `http://schemas.openehr.org/v2`.
+ 
 The repository is structured as follows:
 
 ----

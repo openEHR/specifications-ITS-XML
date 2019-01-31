@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- openEHR Release 1.0.1 XML schema. Ocean Informatics 2007.04.02  -->
-<xs:schema xmlns="http://schemas.openehr.org/v1" xmlns:mstns="http://schemas.openehr.org/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified" version="v1.0.1" id="Template.xsd">
+<xs:schema xmlns="http://schemas.openehr.org/v2" xmlns:mstns="http://schemas.openehr.org/v2" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.openehr.org/v2" elementFormDefault="qualified" version="v1.0.1" id="Template.xsd">
 	<xs:element name="Root" type="archetyped"/>
 	<xs:complexType name="content_item" abstract="true">
 		<xs:attribute name="path" type="xs:string"/>

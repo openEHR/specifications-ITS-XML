@@ -3,7 +3,7 @@
 <!-- 2017.08.31 - Update based on agreement at SPEC meeting in Alkmaar, initally for REST API -->
 <!-- Authored by bna@dips.no  -->
 <!-- Status: Draft --> 
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.openehr.org/v1" targetNamespace="http://schemas.openehr.org/v1" elementFormDefault="qualified" version="v1.0.0" id="Query.xsd">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.openehr.org/v2" targetNamespace="http://schemas.openehr.org/v2" elementFormDefault="qualified" version="v1.0.0" id="Query.xsd">
 	<xs:element name="result_set" type="QUERY_RESPONSE">
 		<xs:annotation>
 			<xs:documentation>The root element defining a response from an openEHR Server</xs:documentation>
