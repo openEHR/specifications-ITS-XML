@@ -58,32 +58,32 @@
 	</xs:complexType>
 
 	<xs:complexType name="TEMPLATE">
-    	<xs:complexContent>
-	    	<xs:extension base="AUTHORED_ARCHETYPE">
-	    		<xs:sequence>
-	    			<xs:element name="template_overlays" type="TEMPLATE_OVERLAY" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
-	        	</xs:sequence>
-	      	</xs:extension>
-	    </xs:complexContent>
+		<xs:complexContent>
+			<xs:extension base="AUTHORED_ARCHETYPE">
+				<xs:sequence>
+					<xs:element name="template_overlays" type="TEMPLATE_OVERLAY" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	  </xs:complexType>
 
 	<xs:complexType name="TEMPLATE_OVERLAY">
 		<xs:complexContent>
-    		<xs:extension base="ARCHETYPE">
+			<xs:extension base="ARCHETYPE">
 				<xs:sequence/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 
 	<xs:complexType name="OPERATIONAL_TEMPLATE">
-    	<xs:complexContent>
-	    	<xs:extension base="AUTHORED_ARCHETYPE">
-	    		<xs:sequence>
-	    			<xs:element name="component_terminologies" type="INCLUDED_TERMINOLOGY" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
-	    			<xs:element name="terminology_extracts" type="INCLUDED_TERMINOLOGY" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
-	        	</xs:sequence>
-	      	</xs:extension>
-	    </xs:complexContent>
+		<xs:complexContent>
+			<xs:extension base="AUTHORED_ARCHETYPE">
+				<xs:sequence>
+					<xs:element name="component_terminologies" type="INCLUDED_TERMINOLOGY" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="terminology_extracts" type="INCLUDED_TERMINOLOGY" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 
 	<xs:complexType name="INCLUDED_TERMINOLOGY">
@@ -204,8 +204,8 @@
 		<xs:complexContent>
 		  <xs:extension base="C_SECOND_ORDER">
 			<xs:sequence>
-                <xs:element name="members" type="C_PRIMITIVE_OBJECT" maxOccurs="unbounded"/>
-         	</xs:sequence>
+				<xs:element name="members" type="C_PRIMITIVE_OBJECT" maxOccurs="unbounded"/>
+			</xs:sequence>
 		  </xs:extension>
 		</xs:complexContent>
 	  </xs:complexType>
