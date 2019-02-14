@@ -56,6 +56,25 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+
+	<xs:complexType name="TEMPLATE">
+    	<xs:complexContent>
+	    	<xs:extension base="AUTHORED_ARCHETYPE">
+	    		<xs:sequence>
+	    			<xs:element name="template_overlays" type="TEMPLATE_OVERLAY" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+	        	</xs:sequence>
+	      	</xs:extension>
+	    </xs:complexContent>
+	  </xs:complexType>
+
+	<xs:complexType name="TEMPLATE_OVERLAY">
+		<xs:complexContent>
+    		<xs:extension base="ARCHETYPE">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
 	<xs:complexType name="ARCHETYPE_CONSTRAINT" abstract="true">
 		<xs:sequence/>
 	</xs:complexType>
