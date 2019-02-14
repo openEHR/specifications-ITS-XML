@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		   xmlns="http://schemas.openehr.org/v2" targetNamespace="http://schemas.openehr.org/v2" elementFormDefault="qualified"
 		   id="Archetype.xsd" version="v2.0.6"
-           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+		   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
 	<!-- dependencies -->
 	<xs:include schemaLocation="Rules.xsd"/>
 	<xs:include schemaLocation="ArchetypeCommon.xsd"/>
@@ -98,6 +98,7 @@
 			<xs:extension base="C_DEFINED_OBJECT">
 				<xs:sequence>
 					<xs:element name="attributes" type="C_ATTRIBUTE" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="attributeTuples" type="C_ATTRIBUTE_TUPLE" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -146,6 +147,35 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+
+	  <xs:complexType name="C_SECOND_ORDER" abstract="true">
+		<xs:complexContent>
+			<!-- this should have members, but then it would need to be further restricted by descendants, plus extended. 
+				Not sure how to do that in XSD :) -->
+			<xs:sequence/>
+		</xs:complexContent>
+	  </xs:complexType>
+
+	  <xs:complexType name="C_ATTRIBUTE_TUPLE">
+		<xs:complexContent>
+		  <xs:extension base="C_SECOND_ORDER">
+			<xs:sequence>
+				<xs:element name="members" type="C_ATTRIBUTE" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="tuples" type="C_PRIMITIVE_TUPLE" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		  </xs:extension>
+		</xs:complexContent>
+	  </xs:complexType>
+
+	  <xs:complexType name="C_PRIMITIVE_TUPLE">
+		<xs:complexContent>
+		  <xs:extension base="C_SECOND_ORDER">
+			<xs:sequence>
+                <xs:element name="members" type="C_PRIMITIVE_OBJECT" maxOccurs="unbounded"/>
+         	</xs:sequence>
+		  </xs:extension>
+		</xs:complexContent>
+	  </xs:complexType>
 
 	<xs:complexType name="C_BOOLEAN">
 		<xs:complexContent>
