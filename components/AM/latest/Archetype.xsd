@@ -278,9 +278,11 @@
 	</xs:complexType>
 	<xs:complexType name="ARCHETYPE_TERMINOLOGY">
 		<xs:sequence>
+		<!-- possible here, but redundant: is_differential, original_language, concept_code. add? -->
 			<xs:element name="term_definitions" type="CodeDefinitionSet" maxOccurs="unbounded"/>
 			<xs:element name="term_bindings" type="TermBindingSet" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="value_sets" type="VALUE_SET" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="terminology_extracts" type="CodeDefinitionSet" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
