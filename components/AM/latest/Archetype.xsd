@@ -131,7 +131,7 @@
 			<xs:extension base="C_DEFINED_OBJECT">
 				<xs:sequence>
 					<xs:element name="attributes" type="C_ATTRIBUTE" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="attributeTuples" type="C_ATTRIBUTE_TUPLE" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="attribute_tuples" type="C_ATTRIBUTE_TUPLE" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -182,6 +182,8 @@
 	</xs:complexType>
 
 	  <xs:complexType name="C_SECOND_ORDER" abstract="true">
+		<!-- this should have "members", but then it would need to be further restricted by descendants, plus extended. -->
+	  </xs:complexType>
 		<xs:complexContent>
 			<!-- this should have members, but then it would need to be further restricted by descendants, plus extended. 
 				Not sure how to do that in XSD :) -->
