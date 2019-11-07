@@ -37,6 +37,6 @@ The repository is structured as follows:
 
 == Acknowledgements
 
-Most of XML Schema files were initially authored by https://www.oceanhealthsystems.com[Ocean Informatics]. 
+Most of XML Schema files were initially authored by https://www.oceanhealthsystems.com[Ocean Health Systems].
 Further developments were made thanks to contributions of several openEHR members, 
-https://www.cabolabs.com/en[CaboLabs], https://www.code24.nl[Code24], https://www.dips.com/no?lang=eng[DIPS] and https://www.marand.com/[Marand].
+https://www.cabolabs.com[CaboLabs], https://www.code24.nl[Code24], https://www.dips.com/uk[DIPS] and https://www.better.care/[Better (Marand)].

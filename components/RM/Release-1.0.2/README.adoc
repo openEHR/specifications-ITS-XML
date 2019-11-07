@@ -51,5 +51,5 @@ XML attributes are not used with the exception of the LOCATABLE.archetype_node_i
 true meta-data. Making it an attribute allows archetype paths to be easily mapped to Xpaths.
 
 ### Acknowledgements
-Authored by https://www.oceanhealthsystems.com[Ocean Informatics] - 2008.12.22
+Authored by https://www.oceanhealthsystems.com[Ocean Health Systems] - 2008.12.22
 Revised by https://www.openehr.org[openEHR Foundation] - 2018.12.01
