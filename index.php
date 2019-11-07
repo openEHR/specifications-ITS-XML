@@ -6,7 +6,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/templates/_functions.php');
 $PageName = 'openEHR XML Schemas';
 $format = 'XML Schema';
 $filePattern = '*.xsd';
-$regex_components = '/BASE|RM|AM|LANG|PROC|QUERY/';
+$regex_components = '/BASE|RM|AM|LANG|PROC|QUERY|OET/';
 $regex_releases = '/latest|Release-\d+\.\d+(.\d+)?/';
 $specs_href = 'https://specifications.openehr.org/releases';
 
