@@ -1,0 +1,39 @@
+{
+    "id": "ITS-XML",
+    "title": "XML Schema",
+    "description": "openEHR XML Schemas (XSDs)",
+    "keywords": "openEHR, XML Schema, XSD",
+    "specifications": [
+    ],
+    "expressions": [
+        {
+            "id": "ITS-XML-1.0.2",
+            "type": "url",
+            "title": "all stable XSDs",
+            "description": "openEHR XSDs Release 1.0.2 on Github.",
+            "link": "https://github.com/openEHR/specifications-ITS-XML/releases/tag/Release-1.0.2"
+        }
+    ],
+    "jira": {
+        "open_issues": "11159",
+        "roadmap": "SPECITS"
+    },
+    "releases": [
+        {
+            "id": "2.0.0",
+            "date": "",
+            "jira": {
+                "crs": "SPECITS/versions/12520",
+                "prs": "SPECPR/versions/12543"
+            }
+        },
+        {
+            "id": "1.0.2",
+            "date": "2018-11-29",
+            "jira": {
+                "crs": "SPECITS/versions/11062",
+                "prs": "SPECPR/versions/12542"
+            }
+        }
+    ]
+}
