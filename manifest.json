@@ -4,14 +4,33 @@
     "description": "openEHR XML Schemas (XSDs)",
     "keywords": "openEHR, XML Schema, XSD",
     "specifications": [
+        {
+            "id": "ITS-XML",
+            "title": "XML Schemas (XSDs)",
+            "title_short": "XSDs",
+            "description": "openEHR XML Schemas (XSDs)",
+            "summary": "XML Schemas (XSDs) for use with openEHR systems and tools.",
+            "micro_summary": "XML Schemas for the openEHR RM and AM",
+            "link": "latest/components/",
+            "copyright_year": "2008",
+            "spec_status": "STABLE",
+            "keywords": "xml schema, xsd, schema, its, openehr"
+        }
     ],
     "expressions": [
         {
-            "id": "ITS-XML-1.0.2",
+            "id": "XSDs",
             "type": "url",
-            "title": "all stable XSDs",
-            "description": "openEHR XSDs Release 1.0.2 on Github.",
+            "title": "Release 1.0.2 (stable) XSDs",
+            "description": "All openEHR XML Schemas (XSDs) Release 1.0.2 (stable).",
             "link": "https://github.com/openEHR/specifications-ITS-XML/releases/tag/Release-1.0.2"
+        },
+        {
+            "id": "ITS-XML src",
+            "type": "url",
+            "title": "ITS-XML on github",
+            "description": "openEHR XML Schemas (XSDs) on github.",
+            "link": "https://github.com/openEHR/specifications-ITS-XML/"
         }
     ],
     "jira": {
