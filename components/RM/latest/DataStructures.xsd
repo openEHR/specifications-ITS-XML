@@ -5,9 +5,14 @@
     <!-- dependencies -->
 	<xs:include schemaLocation="Common.xsd"/>
 
+	<xs:complexType name="DATA_STRUCTURE" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="LOCATABLE"/>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:complexType name="HISTORY">
 		<xs:complexContent>
-			<xs:extension base="LOCATABLE">
+			<xs:extension base="DATA_STRUCTURE">
 				<xs:sequence>
 					<xs:element name="origin" type="DV_DATE_TIME"/>
 					<xs:element name="period" type="DV_DURATION" minOccurs="0"/>
@@ -47,7 +52,7 @@
 	</xs:complexType>
 	<xs:complexType name="ITEM_STRUCTURE" abstract="true">
 		<xs:complexContent>
-			<xs:extension base="LOCATABLE"/>
+			<xs:extension base="DATA_STRUCTURE"/>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="ITEM_SINGLE">
