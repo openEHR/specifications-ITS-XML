@@ -9,6 +9,8 @@
 	
 	<!-- Entry point -->
 	<xs:element name="archetype" type="ARCHETYPE"/>
+	<xs:element name="template" type="TEMPLATE"/>
+	<xs:element name="operational_template" type="OPERATIONAL_TEMPLATE"/>
 	
 	<!-- elements needed in ARCHETYPE and AUTHORED_ARCHETYPE -->
 	<xs:group name="ARCHETYPE">
@@ -18,7 +20,6 @@
 			<xs:element name="definition" type="C_COMPLEX_OBJECT"/>
 			<xs:element name="rules" type="RULE_STATEMENT" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="terminology" type="ARCHETYPE_TERMINOLOGY"/>
-			<xs:element name="is_specialised" type="xs:boolean" minOccurs="0"/>
 		</xs:sequence>		
 	</xs:group>
 	
@@ -61,7 +62,7 @@
 		<xs:complexContent>
 			<xs:extension base="AUTHORED_ARCHETYPE">
 				<xs:sequence>
-					<xs:element name="template_overlays" type="TEMPLATE_OVERLAY" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="template_overlays" type="TEMPLATE_OVERLAY" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -79,14 +80,11 @@
 		<xs:complexContent>
 			<xs:extension base="AUTHORED_ARCHETYPE">
 				<xs:sequence>
-					<xs:element name="component_terminologies" type="INCLUDED_TERMINOLOGY" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="terminology_extracts" type="INCLUDED_TERMINOLOGY" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="component_terminologies" type="IncludedTerminology" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="terminology_extracts" type="IncludedTerminology" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
-	</xs:complexType>
-
-	<xs:complexType name="INCLUDED_TERMINOLOGY">
 	</xs:complexType>
 
 	<xs:complexType name="ARCHETYPE_CONSTRAINT" abstract="true">
@@ -181,17 +179,13 @@
 		</xs:complexContent>
 	</xs:complexType>
 
-	  <xs:complexType name="C_SECOND_ORDER" abstract="true">
-		<!-- this should have "members", but then it would need to be further restricted by descendants, plus extended. -->
-	  </xs:complexType>
-		<xs:complexContent>
-			<!-- this should have members, but then it would need to be further restricted by descendants, plus extended. 
-				Not sure how to do that in XSD :) -->
-			<xs:sequence/>
-		</xs:complexContent>
-	  </xs:complexType>
+	<xs:complexType name="C_SECOND_ORDER" abstract="true">
+		<!-- this should have "members", but redefinition of the property in descendants would be required, which is not possible in XSD.
+			members has been added to the descendants of this class
+			-->
+	</xs:complexType>
 
-	  <xs:complexType name="C_ATTRIBUTE_TUPLE">
+	<xs:complexType name="C_ATTRIBUTE_TUPLE">
 		<xs:complexContent>
 		  <xs:extension base="C_SECOND_ORDER">
 			<xs:sequence>
@@ -200,9 +194,9 @@
 			</xs:sequence>
 		  </xs:extension>
 		</xs:complexContent>
-	  </xs:complexType>
+	</xs:complexType>
 
-	  <xs:complexType name="C_PRIMITIVE_TUPLE">
+	<xs:complexType name="C_PRIMITIVE_TUPLE">
 		<xs:complexContent>
 		  <xs:extension base="C_SECOND_ORDER">
 			<xs:sequence>
@@ -210,7 +204,7 @@
 			</xs:sequence>
 		  </xs:extension>
 		</xs:complexContent>
-	  </xs:complexType>
+	</xs:complexType>
 
 	<xs:complexType name="C_BOOLEAN">
 		<xs:complexContent>
@@ -313,18 +307,21 @@
 	</xs:complexType>
 	<xs:complexType name="ARCHETYPE_TERMINOLOGY">
 		<xs:sequence>
-		<!-- possible here, but redundant: is_differential, original_language, concept_code. add? -->
 			<xs:element name="term_definitions" type="CodeDefinitionSet" maxOccurs="unbounded"/>
 			<xs:element name="term_bindings" type="TermBindingSet" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="value_sets" type="VALUE_SET" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="terminology_extracts" type="CodeDefinitionSet" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
+		<xs:attribute name="original_language" type="xs:string"/>
+		<xs:attribute name="is_differential" type="xs:boolean"/>
+		<xs:attribute name="concept_code" type="xs:string"/>
 	</xs:complexType>
-	<xs:complexType name="INCLUDED_TERMINOLOGY">
-		<xs:sequence>
-			<xs:element name="items" type="ARCHETYPE_TERMINOLOGY"/>
-		</xs:sequence>
-		<xs:attribute name="id" type="xs:string" use="required"/>
+	<xs:complexType name="IncludedTerminology">
+		<xs:complexContent>
+			<xs:extension base="ARCHETYPE_TERMINOLOGY">
+				<xs:attribute name="id" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 
 </xs:schema>
