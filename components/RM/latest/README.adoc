@@ -1,6 +1,6 @@
 # RM Types
 
-openEHR https://specifications.openehr.org/releases/RM/Release-1.0.4/[RM] XML schema - openEHR Release-1.0.4.
+openEHR https://specifications.openehr.org/releases/RM/Release-1.1.0/[RM] XML schema - openEHR Release-1.1.0.
 
 These are only type schemas, they do not validate directly any XML document or elements.
 
@@ -52,4 +52,4 @@ true meta-data. Making it an attribute allows archetype paths to be easily mappe
 
 ### Acknowledgements
 Authored by https://www.oceanhealthsystems.com[Ocean Health Systems] - 2008.12.22
-Revised by https://www.openehr.org[openEHR Foundation] - 2019.01.06
+Revised by https://www.openehr.org[openEHR Foundation] - 2021.03.01
