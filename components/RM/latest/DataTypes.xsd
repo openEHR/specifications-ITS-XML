@@ -133,6 +133,16 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="DV_SCALE">
+		<xs:complexContent>
+			<xs:extension base="DV_ORDERED">
+				<xs:sequence>
+					<xs:element name="value" type="xs:float"/>
+					<xs:element name="symbol" type="DV_CODED_TEXT"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:simpleType name="PROPORTION_KIND">
 		<xs:restriction base="xs:integer">
 			<xs:enumeration value="0" id="pk_ratio"/>
