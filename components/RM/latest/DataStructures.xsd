@@ -112,7 +112,10 @@
 			<xs:extension base="ITEM">
 				<xs:choice>
 					<xs:element name="value" type="DATA_VALUE"/>
-					<xs:element name="null_flavour" type="DV_CODED_TEXT"/>
+					<xs:sequence>
+						<xs:element name="null_flavour" type="DV_CODED_TEXT"/>
+						<xs:element name="null_reason" type="DV_TEXT" minOccurs="0"/>
+					</xs:sequence>
 				</xs:choice>
 			</xs:extension>
 		</xs:complexContent>
