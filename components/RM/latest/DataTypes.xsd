@@ -201,6 +201,7 @@
 		<xs:sequence>
 			<xs:element name="terminology_id" type="TERMINOLOGY_ID"/>
 			<xs:element name="code_string" type="NonEmptyString"/>
+			<xs:element name="preferred_term" type="xs:string" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="TERM_MAPPING">
