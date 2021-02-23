@@ -116,7 +116,7 @@
 		<xs:complexContent>
 			<xs:extension base="DV_AMOUNT">
 				<xs:sequence>
-					<xs:element name="magnitude" type="xs:double"/>
+					<xs:element name="magnitude" type="xs:float"/>
 					<xs:element name="units" type="NonEmptyString"/>
 					<xs:element name="precision" type="xs:int" default="-1" minOccurs="0"/>
 				</xs:sequence>
