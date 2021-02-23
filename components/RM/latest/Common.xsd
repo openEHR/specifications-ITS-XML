@@ -4,6 +4,7 @@
            id="Common.xsd" version="v1.1.0">
 	<!-- dependencies -->
 	<xs:include schemaLocation="DataTypes.xsd"/>
+	<xs:include schemaLocation="DataStructures.xsd"/><!-- note: this is required by FOLDER.details -->
     <!-- Archetyped Package -->
 	<xs:complexType name="PATHABLE" abstract="true"/>
 	<xs:complexType name="LOCATABLE" abstract="true">
@@ -197,6 +198,7 @@
 				<xs:sequence>
 					<xs:element name="folders" type="FOLDER" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="items" type="OBJECT_REF" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="details" type="ITEM_STRUCTURE" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
