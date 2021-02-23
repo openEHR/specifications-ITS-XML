@@ -54,6 +54,7 @@
             <xs:element name="subject" type="PARTY_PROXY" minOccurs="0"/>
             <xs:element name="time" type="DV_DATE_TIME" minOccurs="0"/>
             <xs:element name="version_id" type="xs:string" minOccurs="0"/>
+            <xs:element name="other_details" type="ITEM_STRUCTURE" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
     <!-- Generic Package -->
