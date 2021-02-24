@@ -157,7 +157,7 @@
 				<xs:sequence>
 					<xs:element name="description" type="ITEM_STRUCTURE"/>
 					<xs:element name="timing" type="DV_PARSABLE" minOccurs="0"/>
-					<xs:element name="action_archetype_id" type="NonEmptyString" minOccurs="0"/>
+					<xs:element name="action_archetype_id" type="NonEmptyString" default="/.*/"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
