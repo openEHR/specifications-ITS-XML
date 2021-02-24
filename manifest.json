@@ -1,0 +1,55 @@
+{
+    "id": "ITS-XML",
+    "title": "XML Schema",
+    "description": "openEHR XML Schemas (XSDs)",
+    "keywords": "openEHR, XML Schema, XSD",
+    "specifications": [
+        {
+            "id": "ITS-XML-ALL",
+            "title": "XML Schemas (XSDs)",
+            "title_short": "XSDs",
+            "description": "openEHR XML Schemas (XSDs)",
+            "summary": "XML Schemas (XSDs) for use with openEHR systems and tools.",
+            "micro_summary": "XML Schemas for the openEHR RM and AM",
+            "link": "https://specifications.openehr.org/releases/ITS-XML/Release-1.0.2/components/ALL",
+            "copyright_year": "2008",
+            "spec_status": "STABLE",
+            "keywords": "xml schema, xsd, schema, its, openehr"
+        },
+        {
+            "id": "ITS-XML-AOM2",
+            "title": "AOM2 XML Schemas and examples",
+            "title_short": "XSDs",
+            "description": "openEHR AOM2 XML Schemas and examples",
+            "summary": "AOM2 XML Schemas (XSDs) and examples for use with openEHR systems and tools.",
+            "micro_summary": "AOM2 XML Schemas and examples",
+            "link": "https://specifications.openehr.org/releases/ITS-XML/Release-1.0.2/components/AOM2",
+            "copyright_year": "2008",
+            "spec_status": "DEVELOPMENT",
+            "keywords": "aom2, xml schema, xsd, schema, its, openehr"
+        }
+    ],
+    "expressions": [
+        {
+            "id": "XSDs",
+            "type": "url",
+            "title": "Release 1.0.2 (stable) XSDs",
+            "description": "All openEHR XML Schemas (XSDs) Release 1.0.2 (stable).",
+            "link": "https://github.com/openEHR/specifications-ITS-XML/releases/tag/Release-1.0.2v2"
+        }
+    ],
+    "jira": {
+        "open_issues": "11159",
+        "roadmap": "SPECITS"
+    },
+    "releases": [
+        {
+            "id": "1.0.2",
+            "date": "2018-11-29",
+            "jira": {
+                "crs": "SPECITS/versions/11062",
+                "prs": "SPECPR/versions/12542"
+            }
+        }
+    ]
+}
