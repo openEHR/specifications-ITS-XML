@@ -39,6 +39,7 @@
 			<xs:element name="accreditation" type="xs:string" minOccurs="0"/>
 			<xs:element name="other_details" type="StringDictionaryItem" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="version_last_translated" type="xs:string" minOccurs="0"/>
+			<xs:element name="other_contributors" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="id" type="xs:string" use="required"/>
 	</xs:complexType>
