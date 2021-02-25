@@ -18,7 +18,7 @@ The repository is structured as follows:
 /components
     /AM                  # schemas for AM component
         /latest          # schemas for development version of AM
-        /Release-1.4     # schemas for Release-1.4 of AM
+        /Release-1.4     # schemas for Release-1.4 of AM and OPT
     /OET                 # schemas for OET Template
         /latest          # schemas for development version of OET
         /Release-1.0.1   # schemas for Release-1.0.1 of OET
