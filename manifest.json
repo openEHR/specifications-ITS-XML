@@ -1,6 +1,6 @@
 {
     "id": "ITS-XML",
-    "title": "XML Schema",
+    "title": "XML Schemas",
     "description": "openEHR XML Schemas (XSDs)",
     "keywords": "openEHR, XML Schema, XSD",
     "specifications": [
@@ -9,21 +9,21 @@
             "title": "AM 1.4 XML Schemas (XSDs)",
             "title_short": "AM 1.4 XSDs",
             "description": "openEHR AM Release 1.4 XML Schemas (XSDs)",
-            "summary": "AM Release 1.4 (including OPT) XML Schemas (XSDs) for use with openEHR systems and tools.",
+            "summary": "AM component, Release 1.4 (including OPT) XML Schemas (XSDs) for use with openEHR systems and tools.",
             "micro_summary": "XML Schemas for the openEHR AM 1.4",
-            "link": "latest/components/AM/Release-1.4/",
+            "link": "components/AM/Release-1.4/",
             "copyright_year": "2008",
             "spec_status": "STABLE",
-            "keywords": "aom, adl, opt, xml schema, xsd, schema, its, openehr"
+            "keywords": "aom, adl, opt, template, xml schema, xsd, schema, its, openehr"
         },
         {
             "id": "ITS-XML-AM2",
             "title": "AM 2 XML Schemas (XSDs)",
             "title_short": "AM 2 XSDs",
             "description": "openEHR AM Release 2 XML Schemas (XSDs)",
-            "summary": "AM Release 2 XML Schemas (XSDs) for use with openEHR systems and tools.",
+            "summary": "AM component, Release 2 XML Schemas (XSDs) for use with openEHR systems and tools.",
             "micro_summary": "XML Schemas for the openEHR AM 2",
-            "link": "latest/components/AM/latest/",
+            "link": "components/AM/latest/",
             "copyright_year": "2014",
             "spec_status": "TRIAL",
             "keywords": "aom2, adl2, xml schema, xsd, schema, its, openehr"
@@ -33,9 +33,9 @@
             "title": "BASE XML Schemas (XSDs)",
             "title_short": "BASE XSDs",
             "description": "openEHR BASE XML Schemas (XSDs)",
-            "summary": "BASE XML Schemas (XSDs) for use with openEHR systems and tools.",
+            "summary": "BASE component XML Schemas (XSDs) for use with openEHR systems and tools.",
             "micro_summary": "XML Schemas for the openEHR BASE",
-            "link": "latest/components/BASE/",
+            "link": "components/BASE/",
             "copyright_year": "2008",
             "spec_status": "STABLE",
             "keywords": "base, xml schema, xsd, schema, its, openehr"
@@ -47,7 +47,7 @@
             "description": "openEHR RM XML Schemas (XSDs)",
             "summary": "RM component XML Schemas (XSDs) for use with openEHR systems and tools.",
             "micro_summary": "XML Schemas for the openEHR RM",
-            "link": "latest/components/RM/",
+            "link": "components/RM/",
             "copyright_year": "2008",
             "spec_status": "STABLE",
             "keywords": "rm, xml schema, xsd, schema, its, openehr"
@@ -59,7 +59,7 @@
             "description": "XML Schemas (XSDs) for .oet Template files",
             "summary": "XML Schemas (XSDs) for .oet Template files",
             "micro_summary": "OET Template XML Schemas",
-            "link": "latest/components/OET/",
+            "link": "components/OET/",
             "copyright_year": "2008",
             "spec_status": "STABLE",
             "keywords": "oet, template, xml schema, xsd, schema, its, openehr"
@@ -71,7 +71,7 @@
             "description": "XML Schemas (XSDs) for AQL Query",
             "summary": "XML Schemas (XSDs) for AQL Query",
             "micro_summary": "AQL QUERY XML Schemas",
-            "link": "latest/components/QUERY/",
+            "link": "components/QUERY/",
             "copyright_year": "2017",
             "spec_status": "TRIAL",
             "keywords": "aql, query, xml schema, xsd, schema, its, openehr"
