@@ -54,11 +54,6 @@
 			<xs:pattern	value="((?:(?:\w+(?:\.[\w-]+)+::)?(?:[a-zA-Z]\w+)-(?:[a-zA-Z]\w+)-(?:[a-zA-Z]\w+)\.(?:[a-zA-Z]\w+(?:-\w+)?)\.v\d+(?:\.\d+\.\d+)?(?:-(?:rc|alpha)(?:\.\d+)?)?)|(?:(?:at|id)\d+(?:\.\d+)*))"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="atCode">
-		<xs:restriction base="xs:string">
-			<xs:pattern value="at(0\.[0-9]{1,4}|[0-9]{4})(\.[0-9]{1,3})*"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="NonEmptyString">
 		<xs:restriction base="xs:string">
 			<xs:minLength value="1"/>

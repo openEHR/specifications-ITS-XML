@@ -165,7 +165,7 @@
 	<xs:complexType name="INSTRUCTION_DETAILS">
 		<xs:sequence>
 			<xs:element name="instruction_id" type="LOCATABLE_REF"/>
-			<xs:element name="activity_id" type="atCode"/>
+			<xs:element name="activity_id" type="NonEmptyString"/>
 			<xs:element name="wf_details" type="ITEM_STRUCTURE" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
