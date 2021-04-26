@@ -49,8 +49,8 @@
 	<xs:simpleType name="archetypeNodeId">
 		<xs:restriction base="xs:string">
 			<!-- an alternative that considers also ARCHETYPE_HRID namespaces and also id-codes
-			((?:(?:\w+(?:\.[\w-]+)+::)?(?:[a-zA-Z]\w+)-(?:[a-zA-Z]\w+)-(?:[a-zA-Z]\w+)\.(?:[a-zA-Z]\w+(?:-\w+)?)\.v\d+(?:\.\d+\.\d+)?(?:-(?:rc|alpha)(?:\.\d+)?)?)|(?:(?:at|id)\d{1,4}(?:\.\d{1,4})*))
-			see https://regex101.com/r/IX5KjF/7
+			((?:(?:\w+(?:\.[\w-]+)+::)?(?:[a-zA-Z]\w+)-(?:[a-zA-Z]\w+)-(?:[a-zA-Z]\w+)\.(?:[a-zA-Z]\w+(?:-\w+)?)\.v\d+(?:\.\d+\.\d+)?(?:-(?:rc|alpha)(?:\.\d+)?)?)|(?:(?:at|id)\d+(?:\.\d+)*))
+			see https://regex101.com/r/IX5KjF/8
 			-->
 			<xs:pattern
 					value="([a-zA-Z]\w+-[a-zA-Z]\w+-[a-zA-Z]\w+\.[a-zA-Z]\w+(-\w+)?\.v\d+(\.\d+\.\d+)?((-rc|-alpha)(\.\d+)?)?)|((at|id)\d{1,4}(\.\d{1,4})*)"
