@@ -28,6 +28,7 @@ The repository is structured as follows:
         /Release-1.0.3   # schemas for Release-1.0.3 of BASE
         /Release-1.0.4   # schemas for Release-1.0.4 of BASE
         /Release-1.1.0   # schemas for Release-1.1.0 of BASE
+        /Release-1.2.0   # schemas for Release-1.2.0 of BASE
     /QUERY               # schemas for QUERY component
         /latest          # schemas for development version of QUERY
     /RM                  # schemas for RM component
