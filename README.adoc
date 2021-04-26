@@ -8,7 +8,7 @@ NOTE: These schemas are in TRIAL state and subject to change.
 An older stable release of openEHR XML schema can be still found at https://github.com/openEHR/specifications-ITS-XML/releases/tag/Release-1.0.2v2[Release-1.0.2].
 
 In order to signal and to avoid breaking changes introduced by a number of ITS JIRA issues, as well as by restructure of this repository,
-the new release is going to be a major version, tagged as **Release-2.0.0**.
+the new release is a major version, tagged as **Release-2.0.0**.
 Simultaneously, the internal namespace used in the schemas is also changed to `http://schemas.openehr.org/v2`.
  
 The repository is structured as follows:
