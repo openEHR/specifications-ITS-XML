@@ -86,7 +86,7 @@
             "link": "https://github.com/openEHR/specifications-ITS-XML/releases/tag/Release-1.0.2v2"
         },
         {
-            "id": "XSDs",
+            "id": "XSDs.v2",
             "type": "url",
             "title": "Release 2.0.0 (trial) XSDs",
             "description": "Downloadable openEHR XML Schemas (XSDs) Release 2.0.0 (trial).",
