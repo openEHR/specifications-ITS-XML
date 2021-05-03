@@ -13,7 +13,7 @@
             "micro_summary": "XML Schemas for the openEHR AM 1.4",
             "link": "components/AM/Release-1.4/",
             "copyright_year": "2008",
-            "spec_status": "STABLE",
+            "spec_status": "TRIAL",
             "keywords": "aom, adl, opt, template, xml schema, xsd, schema, its, openehr"
         },
         {
@@ -37,7 +37,7 @@
             "micro_summary": "XML Schemas for the openEHR BASE",
             "link": "components/BASE/",
             "copyright_year": "2008",
-            "spec_status": "STABLE",
+            "spec_status": "TRIAL",
             "keywords": "base, xml schema, xsd, schema, its, openehr"
         },
         {
@@ -49,7 +49,7 @@
             "micro_summary": "XML Schemas for the openEHR RM",
             "link": "components/RM/",
             "copyright_year": "2008",
-            "spec_status": "STABLE",
+            "spec_status": "TRIAL",
             "keywords": "rm, xml schema, xsd, schema, its, openehr"
         },
         {
@@ -61,7 +61,7 @@
             "micro_summary": "OET Template XML Schemas",
             "link": "components/OET/",
             "copyright_year": "2008",
-            "spec_status": "STABLE",
+            "spec_status": "TRIAL",
             "keywords": "oet, template, xml schema, xsd, schema, its, openehr"
         },
         {
@@ -75,6 +75,18 @@
             "copyright_year": "2017",
             "spec_status": "TRIAL",
             "keywords": "aql, query, xml schema, xsd, schema, its, openehr"
+        },
+        {
+            "id": "ITS-XML-v1",
+            "title": "All v1 XML Schemas (XSDs)",
+            "title_short": "openEHR XSDs v1",
+            "description": "All XML Schemas (XSDs) Release 1.0.2 (stable)",
+            "summary": "All XML Schemas (XSDs) Release 1.0.2 (stable)",
+            "micro_summary": "All v1 XML Schemas (XSDs)",
+            "link": "https://specifications.openehr.org/releases/ITS-XML/Release-1.0.2/components/ALL",
+            "copyright_year": "2008",
+            "spec_status": "STABLE",
+            "keywords": "xml schema, xsd, schema, its, openehr"
         }
     ],
     "expressions": [
@@ -86,7 +98,7 @@
             "link": "https://github.com/openEHR/specifications-ITS-XML/releases/tag/Release-1.0.2v2"
         },
         {
-            "id": "XSDs.v2",
+            "id": "XSDs v2",
             "type": "url",
             "title": "Release 2.0.0 (trial) XSDs",
             "description": "Downloadable openEHR XML Schemas (XSDs) Release 2.0.0 (trial).",

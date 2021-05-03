@@ -4,8 +4,8 @@ XML schema for use with openEHR systems and tools. See https://specifications.op
 
 == Releases and IM Versions
 
-NOTE: These schemas are in TRIAL state and subject to change.
-An older stable release of openEHR XML schema can be still found at https://github.com/openEHR/specifications-ITS-XML/releases/tag/Release-1.0.2v2[Release-1.0.2].
+NOTE: These schemas are in *TRIAL* state and subject to change.
+An older *STABLE* release of openEHR XML schema can be still found at https://github.com/openEHR/specifications-ITS-XML/releases/tag/Release-1.0.2v2[Release-1.0.2].
 
 In order to signal and to avoid breaking changes introduced by a number of ITS JIRA issues, as well as by restructure of this repository,
 the new release is a major version, tagged as **Release-2.0.0**.
