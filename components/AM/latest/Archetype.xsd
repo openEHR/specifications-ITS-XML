@@ -2,13 +2,15 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		   xmlns="http://schemas.openehr.org/v2" targetNamespace="http://schemas.openehr.org/v2" elementFormDefault="qualified"
 		   id="Archetype.xsd" version="v2.0.6"
-           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+		   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
 	<!-- dependencies -->
 	<xs:include schemaLocation="Rules.xsd"/>
 	<xs:include schemaLocation="ArchetypeCommon.xsd"/>
 	
 	<!-- Entry point -->
 	<xs:element name="archetype" type="ARCHETYPE"/>
+	<xs:element name="template" type="TEMPLATE"/>
+	<xs:element name="operational_template" type="OPERATIONAL_TEMPLATE"/>
 	
 	<!-- elements needed in ARCHETYPE and AUTHORED_ARCHETYPE -->
 	<xs:group name="ARCHETYPE">
@@ -18,7 +20,6 @@
 			<xs:element name="definition" type="C_COMPLEX_OBJECT"/>
 			<xs:element name="rules" type="RULE_STATEMENT" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="terminology" type="ARCHETYPE_TERMINOLOGY"/>
-			<xs:element name="is_specialised" type="xs:boolean" minOccurs="0"/>
 		</xs:sequence>		
 	</xs:group>
 	
@@ -56,6 +57,36 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+
+	<xs:complexType name="TEMPLATE">
+		<xs:complexContent>
+			<xs:extension base="AUTHORED_ARCHETYPE">
+				<xs:sequence>
+					<xs:element name="template_overlays" type="TEMPLATE_OVERLAY" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	  </xs:complexType>
+
+	<xs:complexType name="TEMPLATE_OVERLAY">
+		<xs:complexContent>
+			<xs:extension base="ARCHETYPE">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="OPERATIONAL_TEMPLATE">
+		<xs:complexContent>
+			<xs:extension base="AUTHORED_ARCHETYPE">
+				<xs:sequence>
+					<xs:element name="component_terminologies" type="IncludedTerminology" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="terminology_extracts" type="IncludedTerminology" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
 	<xs:complexType name="ARCHETYPE_CONSTRAINT" abstract="true">
 		<xs:sequence/>
 	</xs:complexType>
@@ -98,6 +129,7 @@
 			<xs:extension base="C_DEFINED_OBJECT">
 				<xs:sequence>
 					<xs:element name="attributes" type="C_ATTRIBUTE" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="attribute_tuples" type="C_ATTRIBUTE_TUPLE" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -144,6 +176,33 @@
 					<xs:element name="target_path" type="xs:string"/>
 				</xs:sequence>
 			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="C_SECOND_ORDER" abstract="true">
+		<!-- this should have "members", but redefinition of the property in descendants would be required, which is not possible in XSD.
+			members has been added to the descendants of this class
+			-->
+	</xs:complexType>
+
+	<xs:complexType name="C_ATTRIBUTE_TUPLE">
+		<xs:complexContent>
+		  <xs:extension base="C_SECOND_ORDER">
+			<xs:sequence>
+				<xs:element name="members" type="C_ATTRIBUTE" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="tuples" type="C_PRIMITIVE_TUPLE" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		  </xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="C_PRIMITIVE_TUPLE">
+		<xs:complexContent>
+		  <xs:extension base="C_SECOND_ORDER">
+			<xs:sequence>
+				<xs:element name="members" type="C_PRIMITIVE_OBJECT" maxOccurs="unbounded"/>
+			</xs:sequence>
+		  </xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 
@@ -251,7 +310,18 @@
 			<xs:element name="term_definitions" type="CodeDefinitionSet" maxOccurs="unbounded"/>
 			<xs:element name="term_bindings" type="TermBindingSet" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="value_sets" type="VALUE_SET" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="terminology_extracts" type="CodeDefinitionSet" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
+		<xs:attribute name="original_language" type="xs:string"/>
+		<xs:attribute name="is_differential" type="xs:boolean"/>
+		<xs:attribute name="concept_code" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="IncludedTerminology">
+		<xs:complexContent>
+			<xs:extension base="ARCHETYPE_TERMINOLOGY">
+				<xs:attribute name="id" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 
 </xs:schema>
