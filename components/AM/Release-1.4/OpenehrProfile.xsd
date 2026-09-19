@@ -25,10 +25,7 @@
 			<xs:extension base="C_DOMAIN_TYPE">
 				<xs:sequence>
 					<xs:element name="assumed_value" type="DV_ORDINAL" minOccurs="0"/>			
-					<xs:choice>	
 						<xs:element name="list" type="ORDINAL" minOccurs="1" maxOccurs="unbounded"/>			
-						<xs:element name="list" type="DV_CODED_TEXT" minOccurs="1" maxOccurs="unbounded"/>
-					</xs:choice>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -37,19 +34,23 @@
 	<xs:complexType name="ORDINAL">
 				<xs:sequence>
 					<xs:element name="value" type="xs:integer" minOccurs="0"/>
-					<xs:element name="symbol" type="C_CODE_PHRASE" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="symbol" type="NUMBERED_SYMBOL" minOccurs="1" maxOccurs="1"/>
 				</xs:sequence>
 	</xs:complexType>
 	
+	<xs:complexType name="NUMBERED_SYMBOL">
+		<xs:sequence>
+			<xs:element name="value" type="NonEmptyString" minOccurs="0"/>
+			<xs:element name="defining_code" type="CODE_PHRASE" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+
 <xs:complexType name="C_DV_SCALE">
 	<xs:complexContent>
 		<xs:extension base="C_DOMAIN_TYPE">
 			<xs:sequence>
 				<xs:element name="assumed_value" type="DV_SCALE" minOccurs="0"/>
-				<xs:choice>
-					<xs:element name="list" type="SCALE" minOccurs="1" maxOccurs="unbounded"/>
-					<xs:element name="list" type="DV_CODED_TEXT" minOccurs="1" maxOccurs="unbounded"/>
-				</xs:choice>
+				<xs:element name="list" type="SCALE" minOccurs="1" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:extension>
 	</xs:complexContent>
@@ -58,7 +59,7 @@
 <xs:complexType name="SCALE">
 	<xs:sequence>
 		<xs:element name="value" type="xs:float" minOccurs="0"/>
-		<xs:element name="symbol" type="C_CODE_PHRASE" minOccurs="1" maxOccurs="1"/>
+		<xs:element name="symbol" type="NUMBERED_SYMBOL" minOccurs="1" maxOccurs="1"/>
 	</xs:sequence>
 </xs:complexType>
 	
