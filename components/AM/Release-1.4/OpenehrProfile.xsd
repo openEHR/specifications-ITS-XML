@@ -24,12 +24,53 @@
 		<xs:complexContent>
 			<xs:extension base="C_DOMAIN_TYPE">
 				<xs:sequence>
-					<xs:element name="assumed_value" type="DV_ORDINAL" minOccurs="0"/>
-					<xs:element name="list" type="DV_ORDINAL" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="assumed_value" type="DV_ORDINAL" minOccurs="0"/>			
+						<xs:element name="list" type="ORDINAL" minOccurs="1" maxOccurs="unbounded"/>			
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	
+	<xs:complexType name="ORDINAL">
+				<xs:sequence>
+					<xs:element name="value" type="xs:integer" minOccurs="0"/>
+					<xs:element name="symbol" type="ORDINAL_SYMBOL" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ORDINAL_SYMBOL">
+		<xs:sequence>
+			<!-- value element only retained for compatibility against older OPTs which generate a DV_CODED_TEXT pattern with a value of ' ' -->
+			<xs:element name="value" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value=" "/>
+						<xs:length value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="defining_code" type="CODE_PHRASE" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+
+<xs:complexType name="C_DV_SCALE">
+	<xs:complexContent>
+		<xs:extension base="C_DOMAIN_TYPE">
+			<xs:sequence>
+				<xs:element name="assumed_value" type="DV_SCALE" minOccurs="0"/>
+				<xs:element name="list" type="SCALE" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="SCALE">
+	<xs:sequence>
+		<xs:element name="value" type="xs:float" minOccurs="0"/>
+		<xs:element name="symbol" type="ORDINAL_SYMBOL" minOccurs="1" maxOccurs="1"/>
+	</xs:sequence>
+</xs:complexType>
+	
 	<xs:complexType name="C_DV_QUANTITY">
 		<xs:complexContent>
 			<xs:extension base="C_DOMAIN_TYPE">
