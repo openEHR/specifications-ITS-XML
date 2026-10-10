@@ -1,19 +1,20 @@
-= specifications-ITS-XML
+# specifications-ITS-XML
 
-XML schema for use with openEHR systems and tools. See https://specifications.openehr.org/development_baseline[development baseline] of current specifications.
+XML schema for use with openEHR systems and tools. See [development baseline](https://specifications.openehr.org/development_baseline) of current specifications.
 
-== Releases and IM Versions
+## Releases and IM Versions
 
-NOTE: These schemas are in *TRIAL* state and subject to change.
-An older *STABLE* release of openEHR XML schema can be still found at https://github.com/openEHR/specifications-ITS-XML/releases/tag/Release-1.0.2v2[Release-1.0.2].
+> [!NOTE]
+> These schemas are in **TRIAL** state and subject to change.
+> An older **STABLE** release of openEHR XML schema can be still found at [Release-1.0.2](https://github.com/openEHR/specifications-ITS-XML/releases/tag/Release-1.0.2v2).
 
 In order to signal and to avoid breaking changes introduced by a number of ITS JIRA issues, as well as by restructure of this repository,
 the new release is a major version, tagged as **Release-2.0.0**.
 Simultaneously, the internal namespace used in the schemas is also changed to `http://schemas.openehr.org/v2`.
- 
+
 The repository is structured as follows:
 
-----
+```
 /examples                # XML examples
 /components
     /AM                  # schemas for AM component
@@ -37,10 +38,10 @@ The repository is structured as follows:
         /Release-1.0.3   # schemas for Release-1.0.3 of RM
         /Release-1.0.4   # schemas for Release-1.0.4 of RM
         /Release-1.1.0   # schemas for Release-1.1.0 of RM
-----
+```
 
-== Acknowledgements
+## Acknowledgements
 
-Most of XML Schema files were initially authored by https://www.oceanhealthsystems.com[Ocean Health Systems].
-Further developments were made thanks to contributions of several openEHR members, 
-https://www.cabolabs.com[CaboLabs], https://www.code24.nl[Code24], https://www.dips.com/uk[DIPS] and https://www.better.care/[Better (Marand)].
+Most of XML Schema files were initially authored by [Ocean Health Systems](https://www.oceanhealthsystems.com).
+Further developments were made thanks to contributions of several openEHR members,
+[CaboLabs](https://www.cabolabs.com), [Code24](https://www.code24.nl), [DIPS](https://www.dips.com/uk) and [Better (Marand)](https://www.better.care/).

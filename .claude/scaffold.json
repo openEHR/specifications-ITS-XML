@@ -1,6 +1,6 @@
 {
   "template_set": "openehr-specs/scaffold",
-  "revision": 2,
+  "revision": 4,
   "variables": {
     "component": "ITS-XML",
     "repo_name": "specifications-ITS-XML",
@@ -14,11 +14,10 @@
     "default_branch": "master",
     "license": "apache-2.0",
     "bmm_schema_id": "",
-    "base_bmm_schema_id": "",
+    "bmm_dependencies": "",
     "documents": "`ITS-XML-AM`, `ITS-XML-AM2`, `ITS-XML-BASE`, `ITS-XML-RM`, `ITS-XML-OET`, `ITS-XML-QUERY`, `ITS-XML-v1`"
   },
   "defaulted": [
-    "base_bmm_schema_id",
     "bmm_schema_id",
     "first_release",
     "license",
