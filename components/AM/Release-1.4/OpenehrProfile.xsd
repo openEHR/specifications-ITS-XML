@@ -20,57 +20,60 @@
 		</xs:complexContent>
 	</xs:complexType>
 
+	<!-- C_DV_ORDINAL and C_DV_SCALE serialise each allowed value as an ORDINAL / SCALE (value + symbol), as the AOM 1.4
+	     ORDINAL class does, instead of as a full DV_ORDINAL / DV_SCALE instance. The symbol of a DV_ORDINAL is a DV_CODED_TEXT
+	     whose DV_TEXT.value is mandatory: right for data, meaningless in a constraint (SPECPR-492).
+	     'list' is optional: an absent list means that any value is allowed.
+	     C_DV_SCALE is an ITS extension; it is not defined in the AOM 1.4 or Archetype Profile specifications. -->
 	<xs:complexType name="C_DV_ORDINAL">
 		<xs:complexContent>
 			<xs:extension base="C_DOMAIN_TYPE">
 				<xs:sequence>
-					<xs:element name="assumed_value" type="DV_ORDINAL" minOccurs="0"/>			
-						<xs:element name="list" type="ORDINAL" minOccurs="1" maxOccurs="unbounded"/>			
+					<xs:element name="assumed_value" type="ORDINAL" minOccurs="0"/>
+					<xs:element name="list" type="ORDINAL" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	
 	<xs:complexType name="ORDINAL">
-				<xs:sequence>
-					<xs:element name="value" type="xs:integer" minOccurs="0"/>
-					<xs:element name="symbol" type="ORDINAL_SYMBOL" minOccurs="1" maxOccurs="1"/>
-				</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="ORDINAL_SYMBOL">
 		<xs:sequence>
-			<!-- value element only retained for compatibility against older OPTs which generate a DV_CODED_TEXT pattern with a value of ' ' -->
-			<xs:element name="value" minOccurs="0">
-				<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:pattern value=" "/>
-						<xs:length value="1"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
-			<xs:element name="defining_code" type="CODE_PHRASE" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="value" type="xs:int"/>
+			<xs:element name="symbol" type="ORDINAL_SYMBOL"/>
 		</xs:sequence>
 	</xs:complexType>
-
-<xs:complexType name="C_DV_SCALE">
-	<xs:complexContent>
-		<xs:extension base="C_DOMAIN_TYPE">
+	<xs:complexType name="C_DV_SCALE">
+		<xs:complexContent>
+			<xs:extension base="C_DOMAIN_TYPE">
+				<xs:sequence>
+					<xs:element name="assumed_value" type="SCALE" minOccurs="0"/>
+					<xs:element name="list" type="SCALE" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SCALE">
+		<xs:sequence>
+			<xs:element name="value" type="xs:float"/>
+			<xs:element name="symbol" type="ORDINAL_SYMBOL"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Symbol of an ORDINAL or SCALE: a terminology code, in either of two shapes.
+	     1. DV_CODED_TEXT-like: defining_code, with an optional text 'value'. Archetype Designer omits the value, Ocean OPTs
+	        write a dummy ' ', other tools may write the term text. In a constraint it is language-neutral and not required.
+	     2. A bare CODE_PHRASE (terminology_id + code_string), as in the AOM 1.4 ORDINAL class. -->
+	<xs:complexType name="ORDINAL_SYMBOL">
+		<xs:choice>
 			<xs:sequence>
-				<xs:element name="assumed_value" type="DV_SCALE" minOccurs="0"/>
-				<xs:element name="list" type="SCALE" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element name="value" type="NonEmptyString" minOccurs="0"/>
+				<xs:element name="defining_code" type="CODE_PHRASE"/>
 			</xs:sequence>
-		</xs:extension>
-	</xs:complexContent>
-</xs:complexType>
-
-<xs:complexType name="SCALE">
-	<xs:sequence>
-		<xs:element name="value" type="xs:float" minOccurs="0"/>
-		<xs:element name="symbol" type="ORDINAL_SYMBOL" minOccurs="1" maxOccurs="1"/>
-	</xs:sequence>
-</xs:complexType>
-	
+			<xs:sequence>
+				<xs:element name="terminology_id" type="TERMINOLOGY_ID"/>
+				<xs:element name="code_string" type="NonEmptyString"/>
+				<xs:element name="preferred_term" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:choice>
+	</xs:complexType>
 	<xs:complexType name="C_DV_QUANTITY">
 		<xs:complexContent>
 			<xs:extension base="C_DOMAIN_TYPE">
