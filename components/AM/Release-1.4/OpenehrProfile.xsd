@@ -20,57 +20,88 @@
 		</xs:complexContent>
 	</xs:complexType>
 
+	<!-- C_DV_ORDINAL and C_DV_SCALE list each allowed value as an ORDINAL / SCALE (value + symbol), not as a full
+	     DV_ORDINAL / DV_SCALE instance: the symbol of a DV_ORDINAL is a DV_CODED_TEXT whose DV_TEXT.value is mandatory, which
+	     is right for data but meaningless in a constraint (SPECPR-492). The optional DV_ORDERED and DV_TEXT elements are still
+	     accepted, so entries written in the DV_ORDINAL / DV_SCALE shape stay valid. Not accepted any more: xsi:type="DV_ORDINAL",
+	     "DV_SCALE" or "DV_CODED_TEXT" on these elements.
+	     'list' is optional: an absent list means that any value is allowed.
+	     C_DV_SCALE is an ITS extension; it is not defined in the AOM 1.4 or Archetype Profile specifications. -->
 	<xs:complexType name="C_DV_ORDINAL">
 		<xs:complexContent>
 			<xs:extension base="C_DOMAIN_TYPE">
 				<xs:sequence>
-					<xs:element name="assumed_value" type="DV_ORDINAL" minOccurs="0"/>			
-						<xs:element name="list" type="ORDINAL" minOccurs="1" maxOccurs="unbounded"/>			
+					<xs:element name="assumed_value" type="ORDINAL" minOccurs="0"/>
+					<xs:element name="list" type="ORDINAL" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	
 	<xs:complexType name="ORDINAL">
-				<xs:sequence>
-					<xs:element name="value" type="xs:integer" minOccurs="0"/>
-					<xs:element name="symbol" type="ORDINAL_SYMBOL" minOccurs="1" maxOccurs="1"/>
-				</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="ORDINAL_SYMBOL">
 		<xs:sequence>
-			<!-- value element only retained for compatibility against older OPTs which generate a DV_CODED_TEXT pattern with a value of ' ' -->
-			<xs:element name="value" minOccurs="0">
-				<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:pattern value=" "/>
-						<xs:length value="1"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
-			<xs:element name="defining_code" type="CODE_PHRASE" minOccurs="1" maxOccurs="1"/>
+			<xs:group ref="DvOrderedElements"/>
+			<xs:element name="value" type="xs:int"/>
+			<xs:element name="symbol" type="ORDINAL_SYMBOL"/>
 		</xs:sequence>
 	</xs:complexType>
-
-<xs:complexType name="C_DV_SCALE">
-	<xs:complexContent>
-		<xs:extension base="C_DOMAIN_TYPE">
+	<xs:complexType name="C_DV_SCALE">
+		<xs:complexContent>
+			<xs:extension base="C_DOMAIN_TYPE">
+				<xs:sequence>
+					<xs:element name="assumed_value" type="SCALE" minOccurs="0"/>
+					<xs:element name="list" type="SCALE" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- value and symbol in either order: Archetype Designer writes the symbol first -->
+	<xs:complexType name="SCALE">
+		<xs:sequence>
+			<xs:group ref="DvOrderedElements"/>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element name="value" type="xs:float"/>
+					<xs:element name="symbol" type="ORDINAL_SYMBOL"/>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element name="symbol" type="ORDINAL_SYMBOL"/>
+					<xs:element name="value" type="xs:float"/>
+				</xs:sequence>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- the optional elements of DV_ORDERED, in RM order -->
+	<xs:group name="DvOrderedElements">
+		<xs:sequence>
+			<xs:element name="normal_range" type="DV_INTERVAL" minOccurs="0"/>
+			<xs:element name="other_reference_ranges" type="REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="normal_status" type="CODE_PHRASE" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<!-- Symbol of an ORDINAL or SCALE: a terminology code, in either of two shapes.
+	     1. The DV_CODED_TEXT shape: defining_code, after the optional DV_TEXT elements in RM order. In a constraint the text
+	        'value' carries no meaning: Archetype Designer omits it; Ocean Template Designer, the Ocean OPT generator and the
+	        CKM archetype XML export write an empty <value/>. An empty or absent value means that no text is given.
+	     2. A bare CODE_PHRASE (terminology_id + code_string), like the ORDINAL class in AOM 1.4 Appendix A (an example there,
+	        not normative). -->
+	<xs:complexType name="ORDINAL_SYMBOL">
+		<xs:choice>
 			<xs:sequence>
-				<xs:element name="assumed_value" type="DV_SCALE" minOccurs="0"/>
-				<xs:element name="list" type="SCALE" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element name="value" type="xs:string" minOccurs="0"/>
+				<xs:element name="hyperlink" type="DV_URI" minOccurs="0"/>
+				<xs:element name="formatting" type="NonEmptyString" minOccurs="0"/>
+				<xs:element name="mappings" type="TERM_MAPPING" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="language" type="CODE_PHRASE" minOccurs="0"/>
+				<xs:element name="encoding" type="CODE_PHRASE" minOccurs="0"/>
+				<xs:element name="defining_code" type="CODE_PHRASE"/>
 			</xs:sequence>
-		</xs:extension>
-	</xs:complexContent>
-</xs:complexType>
-
-<xs:complexType name="SCALE">
-	<xs:sequence>
-		<xs:element name="value" type="xs:float" minOccurs="0"/>
-		<xs:element name="symbol" type="ORDINAL_SYMBOL" minOccurs="1" maxOccurs="1"/>
-	</xs:sequence>
-</xs:complexType>
-	
+			<xs:sequence>
+				<xs:element name="terminology_id" type="TERMINOLOGY_ID"/>
+				<xs:element name="code_string" type="NonEmptyString"/>
+				<xs:element name="preferred_term" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:choice>
+	</xs:complexType>
 	<xs:complexType name="C_DV_QUANTITY">
 		<xs:complexContent>
 			<xs:extension base="C_DOMAIN_TYPE">
