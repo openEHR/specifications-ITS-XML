@@ -168,11 +168,12 @@
                                                         <assumed_value>
                                                             <value>0</value>
                                                             <symbol>
+                                                                <value />
                                                                 <defining_code>
                                                                     <terminology_id>
                                                                         <value>local</value>
                                                                     </terminology_id>
-                                                                    <code_string>at0005</code_string>
+                                                                    <code_string>at0006</code_string>
                                                                 </defining_code>
                                                             </symbol>
                                                         </assumed_value>
@@ -185,7 +186,7 @@
                                                         <list>
                                                             <value>0</value>
                                                             <symbol>
-                                                                <value> </value>
+                                                                <value />
                                                                 <defining_code>
                                                                     <terminology_id>
                                                                         <value>local</value>
@@ -197,7 +198,7 @@
                                                         <list>
                                                             <value>1</value>
                                                             <symbol>
-                                                                <value>Rubric of at0007</value>
+                                                                <value> </value>
                                                                 <defining_code>
                                                                     <terminology_id>
                                                                         <value>local</value>
@@ -209,10 +210,52 @@
                                                         <list>
                                                             <value>2</value>
                                                             <symbol>
+                                                                <value>Rubric of at0008</value>
+                                                                <defining_code>
+                                                                    <terminology_id>
+                                                                        <value>local</value>
+                                                                    </terminology_id>
+                                                                    <code_string>at0008</code_string>
+                                                                </defining_code>
+                                                            </symbol>
+                                                        </list>
+                                                        <list>
+                                                            <normal_status>
+                                                                <terminology_id>
+                                                                    <value>openehr_normal_statuses</value>
+                                                                </terminology_id>
+                                                                <code_string>N</code_string>
+                                                            </normal_status>
+                                                            <value>3</value>
+                                                            <symbol>
+                                                                <value>Rubric of at0009</value>
+                                                                <language>
+                                                                    <terminology_id>
+                                                                        <value>ISO_639-1</value>
+                                                                    </terminology_id>
+                                                                    <code_string>en</code_string>
+                                                                </language>
+                                                                <encoding>
+                                                                    <terminology_id>
+                                                                        <value>IANA_character-sets</value>
+                                                                    </terminology_id>
+                                                                    <code_string>UTF-8</code_string>
+                                                                </encoding>
+                                                                <defining_code>
+                                                                    <terminology_id>
+                                                                        <value>local</value>
+                                                                    </terminology_id>
+                                                                    <code_string>at0009</code_string>
+                                                                </defining_code>
+                                                            </symbol>
+                                                        </list>
+                                                        <list>
+                                                            <value>4</value>
+                                                            <symbol>
                                                                 <terminology_id>
                                                                     <value>local</value>
                                                                 </terminology_id>
-                                                                <code_string>at0008</code_string>
+                                                                <code_string>at0010</code_string>
                                                             </symbol>
                                                         </list>
                                                     </children>
@@ -242,11 +285,12 @@
                                                         <assumed_value>
                                                             <value>0.5</value>
                                                             <symbol>
+                                                                <value />
                                                                 <defining_code>
                                                                     <terminology_id>
                                                                         <value>local</value>
                                                                     </terminology_id>
-                                                                    <code_string>at0009</code_string>
+                                                                    <code_string>at0012</code_string>
                                                                 </defining_code>
                                                             </symbol>
                                                         </assumed_value>
@@ -257,19 +301,19 @@
                                                                     <terminology_id>
                                                                         <value>local</value>
                                                                     </terminology_id>
-                                                                    <code_string>at0009</code_string>
+                                                                    <code_string>at0011</code_string>
                                                                 </defining_code>
                                                             </symbol>
                                                         </list>
                                                         <list>
                                                             <value>0.5</value>
                                                             <symbol>
-                                                                <value> </value>
+                                                                <value />
                                                                 <defining_code>
                                                                     <terminology_id>
                                                                         <value>local</value>
                                                                     </terminology_id>
-                                                                    <code_string>at0010</code_string>
+                                                                    <code_string>at0012</code_string>
                                                                 </defining_code>
                                                             </symbol>
                                                         </list>
@@ -279,8 +323,19 @@
                                                                 <terminology_id>
                                                                     <value>local</value>
                                                                 </terminology_id>
-                                                                <code_string>at0011</code_string>
+                                                                <code_string>at0013</code_string>
                                                             </symbol>
+                                                        </list>
+                                                        <list>
+                                                            <symbol>
+                                                                <defining_code>
+                                                                    <terminology_id>
+                                                                        <value>local</value>
+                                                                    </terminology_id>
+                                                                    <code_string>at0014</code_string>
+                                                                </defining_code>
+                                                            </symbol>
+                                                            <value>2.5</value>
                                                         </list>
                                                     </children>
                                                 </attributes>
