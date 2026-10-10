@@ -13,10 +13,12 @@ openEHR https://specifications.openehr.org/releases/AM/Release-2.0.6/AOM1.4.html
 `C_DV_ORDINAL` and `C_DV_SCALE` (`OpenehrProfile.xsd`) list their allowed values as `ORDINAL` and `SCALE` objects (a `value` and a `symbol`), not as full `DV_ORDINAL` and `DV_SCALE` instances. The symbol of a `DV_ORDINAL` is a `DV_CODED_TEXT`, whose `DV_TEXT.value` is mandatory: right for data, meaningless in a constraint (https://openehr.atlassian.net/browse/SPECPR-492[SPECPR-492]).
 
 * `list` is optional. An absent list means that any value is allowed. `assumed_value` has the same type as a list entry.
-* `ORDINAL.value` is an `xs:int`, `SCALE.value` an `xs:float`; both are mandatory.
+* `ORDINAL.value` is an `xs:int`, `SCALE.value` an `xs:float`; both are mandatory. In a `SCALE` the `value` and the `symbol` may come in either order (Archetype Designer writes the symbol first).
 * The symbol is a terminology code, in either of two shapes:
-** the `DV_CODED_TEXT` shape, `defining_code` with an optional, non-empty `value` (Archetype Designer omits the value, Ocean writes a single space, other tools may write the term text), or
-** a bare `CODE_PHRASE` (`terminology_id` and `code_string`), as in the AOM 1.4 `ORDINAL` class.
+** the `DV_CODED_TEXT` shape: `defining_code`, after the optional `DV_TEXT` elements. Its text `value` carries no meaning in a constraint and may be absent (Archetype Designer), empty (`<value/>`, as written by Ocean Template Designer, the Ocean OPT generator and the CKM archetype XML export) or any text. An empty or absent value means that no text is given.
+** a bare `CODE_PHRASE` (`terminology_id` and `code_string`), like the `ORDINAL` class in AOM 1.4 Appendix A, which the specification gives as an example, not as a normative definition.
+* The optional `DV_ORDERED` elements (`normal_range`, `other_reference_ranges`, `normal_status`) and `DV_TEXT` elements (`hyperlink`, `formatting`, `mappings`, `language`, `encoding`) are still accepted, so entries written in the full `DV_ORDINAL` / `DV_SCALE` shape remain valid.
+* Breaking change: `xsi:type="DV_ORDINAL"` or `xsi:type="DV_SCALE"` on a `list` or `assumed_value` element, and `xsi:type="DV_CODED_TEXT"` on a `symbol`, are no longer accepted, because these elements are no longer of those RM types.
 * `C_DV_SCALE` is an extension of this ITS. It is not defined in the AOM 1.4 or Archetype Profile specifications.
 
 == Validate an XML instance
