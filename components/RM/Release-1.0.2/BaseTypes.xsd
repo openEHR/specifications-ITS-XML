@@ -54,7 +54,7 @@
 			Note: written for XSD 1.0 (no (?:...) groups; \w and \d replaced by explicit ASCII ranges, since an XSD \w excludes '_')
 			-->
 			<xs:pattern
-					value="([a-zA-Z][A-Za-z0-9_]+-[a-zA-Z][A-Za-z0-9_]+-[a-zA-Z][A-Za-z0-9_]+\.[a-zA-Z][A-Za-z0-9_]+(-[A-Za-z0-9_]+)?\.v[0-9]+(\.[0-9]+\.[0-9]+)?((-rc|-alpha)(\.[0-9]+)?)?)|(at[0-9]{1,4}(\.[0-9]{1,4})?)"
+					value="([a-zA-Z][A-Za-z0-9_]+-[a-zA-Z][A-Za-z0-9_]+-[a-zA-Z][A-Za-z0-9_]+\.[a-zA-Z][A-Za-z0-9_]+(-[A-Za-z0-9_]+)?\.v[0-9]+(\.[0-9]+\.[0-9]+)?((-rc|-alpha)(\.[0-9]+)?)?)|(at[0-9]{1,4}(\.[0-9]{1,4})*)"
 			/>
 		</xs:restriction>
 	</xs:simpleType>
