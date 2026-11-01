@@ -119,6 +119,8 @@
 			<xs:element name="magnitude" type="IntervalOfReal" minOccurs="0"/>
 			<xs:element name="precision" type="IntervalOfInteger" minOccurs="0"/>
 			<xs:element name="units" type="xs:string"/>
+			<xs:element name="units_system" type="NonEmptyUri" minOccurs="0"/>
+			<xs:element name="units_display_name" type="NonEmptyString" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="C_DV_STATE">
