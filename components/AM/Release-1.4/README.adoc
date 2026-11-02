@@ -21,6 +21,15 @@ openEHR https://specifications.openehr.org/releases/AM/Release-2.0.6/AOM1.4.html
 * Breaking change: `xsi:type="DV_ORDINAL"` or `xsi:type="DV_SCALE"` on a `list` or `assumed_value` element, and `xsi:type="DV_CODED_TEXT"` on a `symbol`, are no longer accepted, because these elements are no longer of those RM types.
 * `C_DV_SCALE` is an extension of this ITS. It is not defined in the AOM 1.4 or Archetype Profile specifications.
 
+== Quantity constraints
+
+A `C_QUANTITY_ITEM` (`OpenehrProfile.xsd`) gives one allowed unit of a `C_DV_QUANTITY`. After `units` it may carry the two elements RM 1.1.0 added to `DV_QUANTITY`, with the same types and meaning (https://openehr.atlassian.net/browse/SPECAM-109[SPECAM-109]):
+
+* `units_system` (`NonEmptyUri`): the system or terminology the `units` code comes from, for example `http://unitsofmeasure.org`. When it is absent, `units` is a UCUM code.
+* `units_display_name` (`NonEmptyString`): the units as displayed, for example `lb` for `[lb_av]`.
+
+Both are optional, so OPTs without them stay valid. Archetype Designer writes both in the OPTs it exports.
+
 == Validate an XML instance
 
 Use the `scripts/validate-template.sh` script in the root of this repository to validate an XML instance (for example an OPT) against `Template.xsd`:
