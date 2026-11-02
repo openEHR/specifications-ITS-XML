@@ -44,8 +44,15 @@
 		<xs:complexContent>
 			<xs:extension base="ARCHETYPE_CONSTRAINT">
 				<xs:sequence>
+					<!-- match_negated: legacy element some tools still write, always false. No AOM
+					     1.4 or AOM 2 class has it; it held the cADL negated match of an ADL 1.5 draft
+					     parser. Accepted, before rm_attribute_name or after existence, so that such
+					     OPTs validate; readers ignore it. Fixed to false: a negated match cannot be
+					     expressed in AOM 1.4. -->
+					<xs:element name="match_negated" type="xs:boolean" fixed="false" minOccurs="0"/>
 					<xs:element name="rm_attribute_name" type="xs:string"/>
 					<xs:element name="existence" type="IntervalOfInteger"/>
+					<xs:element name="match_negated" type="xs:boolean" fixed="false" minOccurs="0"/>
 					<xs:element name="children" type="C_OBJECT" minOccurs="0" maxOccurs="unbounded"
 					/>
 				</xs:sequence>

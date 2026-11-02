@@ -42,5 +42,9 @@ An alternative XSD can be supplied as the second argument. The script requires `
 
 `./scripts/validate-examples.sh` checks the examples in `examples/AOM1/operational`: the `.opt` files must validate, and each file in `invalid/` must be rejected.
 
+== Legacy `match_negated`
+
+Archetype Designer, and some tools that re-serialise its OPTs, write a `match_negated` element, always `false`, in every `C_SINGLE_ATTRIBUTE` and `C_MULTIPLE_ATTRIBUTE`. No AOM 1.4 or AOM 2 class has it: it held the cADL negated match (`~matches`) in an ADL 1.5 draft parser. `C_ATTRIBUTE` (`Archetype.xsd`) accepts it, fixed to `false`, in either place it is written: after `existence` (Archetype Designer) or before `rm_attribute_name`. It carries no meaning, so readers ignore it and writers should leave it out. A `true` value is refused, because AOM 1.4 cannot express a negated match.
+
 ### Acknowledgements
 Authored by https://www.oceanhealthsystems.com[Ocean Health Systems] - 2008.12.22
