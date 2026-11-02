@@ -4,9 +4,9 @@ openEHR https://specifications.openehr.org/releases/AM/Release-2.0.6/AOM1.4.html
 
 == Dependencies
 
-`Release-1.4` is not self-contained. `Resource.xsd` includes `../../RM/Release-1.1.0/Common.xsd`, which in turn includes the RM data types and, through `RM/Release-1.1.0/DataTypes.xsd`, `../../BASE/latest/BaseTypes.xsd`. The base types (for example `StringDictionaryItem`, `NonEmptyString`) are therefore taken from `BASE/latest`.
+`Release-1.4` is not self-contained. `Resource.xsd` includes `../../RM/Release-1.1.0/Common.xsd`, which in turn includes the RM data types and, through `RM/Release-1.1.0/DataTypes.xsd`, `../../BASE/Release-1.2.0/BaseTypes.xsd`. The base types (for example `StringDictionaryItem`, `NonEmptyString`) are therefore taken from `BASE/Release-1.2.0`.
 
-`VALIDITY_KIND` is no longer defined here. `timezone_validity` uses the BASE type, whose values are the strings `mandatory`, `optional` and `prohibited`, not the integer codes 1001 to 1003 of the Release-1.0.2 schemas.
+`VALIDITY_KIND` is no longer defined here: it is the BASE type, whose values are the strings `mandatory`, `optional` and `prohibited`. The `timezone_validity` of `C_DATE`, `C_TIME` and `C_DATE_TIME` (`Archetype.xsd`) has the type `VALIDITY_KIND_AOM14`, which also accepts `disallowed`, the word AOM 1.4 uses for `prohibited` (deprecated in BASE), and the integer codes of the Release-1.0.2 schemas, `1001` (mandatory), `1002` (optional) and `1003` (disallowed). OPTs written to either schema therefore validate, and a reader should accept every form, since some readers in use accept only one of them.
 
 == Ordinal and scale constraints
 
