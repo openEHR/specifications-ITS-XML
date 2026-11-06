@@ -226,6 +226,27 @@
 			<xs:enumeration value="2024" id="exponent"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<!-- timezone_validity of C_DATE, C_TIME and C_DATE_TIME: the BASE VALIDITY_KIND words, the
+	     AOM 1.4 word 'disallowed' (in BASE a deprecated synonym of 'prohibited'), or the integer
+	     codes of the Release-1.0.2 schemas (1001 mandatory, 1002 optional, 1003 disallowed), so
+	     that OPTs written to either schema validate. -->
+	<xs:simpleType name="VALIDITY_KIND_AOM14">
+		<xs:union memberTypes="VALIDITY_KIND">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="disallowed"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:enumeration value="1001"/>
+					<xs:enumeration value="1002"/>
+					<xs:enumeration value="1003"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
+
 	<xs:complexType name="C_PRIMITIVE" abstract="true">
 		<xs:sequence/>
 	</xs:complexType>
@@ -279,7 +300,7 @@
 			<xs:extension base="C_PRIMITIVE">
 				<xs:sequence>
 					<xs:element name="pattern" type="DateConstraintPattern" minOccurs="0"/>
-					<xs:element name="timezone_validity" type="VALIDITY_KIND" minOccurs="0"/>
+					<xs:element name="timezone_validity" type="VALIDITY_KIND_AOM14" minOccurs="0"/>
 					<xs:element name="range" type="IntervalOfDate" minOccurs="0"/>
 					<xs:element name="assumed_value" type="Iso8601Date" minOccurs="0"/>
 				</xs:sequence>
@@ -297,7 +318,7 @@
 			<xs:extension base="C_PRIMITIVE">
 				<xs:sequence>
 					<xs:element name="pattern" type="DateTimeConstraintPattern" minOccurs="0"/>
-					<xs:element name="timezone_validity" type="VALIDITY_KIND" minOccurs="0"/>
+					<xs:element name="timezone_validity" type="VALIDITY_KIND_AOM14" minOccurs="0"/>
 					<xs:element name="range" type="IntervalOfDateTime" minOccurs="0"/>
 					<xs:element name="assumed_value" type="Iso8601DateTime" minOccurs="0"/>
 				</xs:sequence>
@@ -317,7 +338,7 @@
 			<xs:extension base="C_PRIMITIVE">
 				<xs:sequence>
 					<xs:element name="pattern" type="TimeConstraintPattern" minOccurs="0"/>
-					<xs:element name="timezone_validity" type="VALIDITY_KIND" minOccurs="0"/>
+					<xs:element name="timezone_validity" type="VALIDITY_KIND_AOM14" minOccurs="0"/>
 					<xs:element name="range" type="IntervalOfTime" minOccurs="0"/>
 					<xs:element name="assumed_value" type="Iso8601Time" minOccurs="0"/>
 				</xs:sequence>
