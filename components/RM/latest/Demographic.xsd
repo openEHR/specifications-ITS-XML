@@ -97,7 +97,7 @@
 				<xs:sequence>
 					<xs:element name="capabilities" type="CAPABILITY" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="time_validity" type="DV_INTERVAL" minOccurs="0"/>
-					<xs:element name="performer" type="PARTY_REF"/>
+					<xs:element name="performer" type="PARTY_REF" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
